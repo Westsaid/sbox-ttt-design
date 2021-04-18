@@ -1,6 +1,6 @@
 body {
     --traitor-red: #DF2935; 
-    --innocent-green: #1BC54E; 
+    --innocent-green: hsl(138, 76%, 44%); 
     --detective-blue: #2196F3; 
     --font-black: #2A2A2A; 
     --font-white: #FAFAFA; 
@@ -13,6 +13,8 @@ body {
     &::-webkit-scrollbar {
       width:  6px;
       height: 6px;
+      opacity: 0;
+      margin-right: 2px;
     }
   
     &::-webkit-scrollbar-thumb {
@@ -20,7 +22,8 @@ body {
     }
   
     &::-webkit-scrollbar-track {
-      background: $background-color;
+      
+      background: #fff4;
     }
   }
 

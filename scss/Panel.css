@@ -1,6 +1,6 @@
 body {
   --traitor-red: #DF2935;
-  --innocent-green: #1BC54E;
+  --innocent-green: hsl(138, 76%, 44%);
   --detective-blue: #2196F3;
   --font-black: #2A2A2A;
   --font-white: #FAFAFA;
@@ -73,14 +73,16 @@ body {
 .panel main::-webkit-scrollbar {
   width: 6px;
   height: 6px;
+  opacity: 0.2;
+  margin-right: 2px;
 }
 
 .panel main::-webkit-scrollbar-thumb {
-  background: pink;
+  background: var(--traitor-red);
 }
 
 .panel main::-webkit-scrollbar-track {
-  background: red;
+  background: #fff9;
 }
 
 .panel footer {

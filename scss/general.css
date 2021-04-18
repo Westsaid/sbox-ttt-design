@@ -1,6 +1,6 @@
 body {
   --traitor-red: #DF2935;
-  --innocent-green: #1BC54E;
+  --innocent-green: hsl(138, 76%, 44%);
   --detective-blue: #2196F3;
   --font-black: #2A2A2A;
   --font-white: #FAFAFA;

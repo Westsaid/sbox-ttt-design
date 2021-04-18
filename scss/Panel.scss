@@ -26,7 +26,7 @@
     }
     main {
         padding: 16px 30px;
-        @include scrollbars(10px, pink, red);
+        @include scrollbars(10px,var(--traitor-red), #fff9);
     }
     footer {
         border-bottom-left-radius: inherit;
