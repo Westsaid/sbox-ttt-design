@@ -195,14 +195,21 @@ body {
   position: relative;
 }
 
-.scoreboard main .scoreboard-group {
+.scoreboard main .scoreboard-group.alive {
+  border-width: 2px;
+  border-style: solid;
+  -o-border-image: linear-gradient(to bottom, #3F7E51, #3F7E51, rgba(0, 0, 0, 0)) 1 1%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#3F7E51), color-stop(#3F7E51), to(rgba(0, 0, 0, 0))) 1 1%;
+     border-image: linear-gradient(to bottom, #3F7E51, #3F7E51, rgba(0, 0, 0, 0)) 1 1%;
+  border-color: #3F7E51;
+  border-right-width: 0;
+  border-left-width: 1px;
   margin-top: 20px;
-  border-top: 2px solid #3F7E51;
 }
 
-.scoreboard main .scoreboard-group:before {
+.scoreboard main .scoreboard-group.alive:before {
   position: absolute;
-  content: "Player alive";
+  content: "Alive";
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding: 0 10px;
@@ -210,6 +217,56 @@ body {
   left: 30px;
   margin-top: -18px;
   background-color: #3F7E51;
+  font-size: .8em;
+}
+
+.scoreboard main .scoreboard-group.dead {
+  border-width: 2px;
+  border-style: solid;
+  -o-border-image: linear-gradient(to bottom, #AF262F, #AF262F, rgba(0, 0, 0, 0)) 1 1%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#AF262F), color-stop(#AF262F), to(rgba(0, 0, 0, 0))) 1 1%;
+     border-image: linear-gradient(to bottom, #AF262F, #AF262F, rgba(0, 0, 0, 0)) 1 1%;
+  border-color: #AF262F;
+  border-right-width: 0;
+  border-left-width: 1px;
+  margin-top: 20px;
+}
+
+.scoreboard main .scoreboard-group.dead:before {
+  position: absolute;
+  content: "Dead";
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 0 10px;
+  display: block;
+  left: 30px;
+  margin-top: -18px;
+  background-color: #AF262F;
+  font-size: .8em;
+}
+
+.scoreboard main .scoreboard-group.spectator {
+  border-width: 2px;
+  border-style: solid;
+  -o-border-image: linear-gradient(to bottom, #BA8107, #BA8107, rgba(0, 0, 0, 0)) 1 1%;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#BA8107), color-stop(#BA8107), to(rgba(0, 0, 0, 0))) 1 1%;
+     border-image: linear-gradient(to bottom, #BA8107, #BA8107, rgba(0, 0, 0, 0)) 1 1%;
+  border-color: #BA8107;
+  border-right-width: 0;
+  border-left-width: 1px;
+  margin-top: 20px;
+}
+
+.scoreboard main .scoreboard-group.spectator:before {
+  position: absolute;
+  content: "Spectator";
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 0 10px;
+  display: block;
+  left: 30px;
+  margin-top: -18px;
+  background-color: #BA8107;
   font-size: .8em;
 }
 

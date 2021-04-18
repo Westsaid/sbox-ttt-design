@@ -16,12 +16,27 @@ document.querySelectorAll(".shop .item").forEach(item => {
 let scoreboardContent = document.querySelector(".scoreboard main")
 let usernames = ["sonsausage", "realtorgas", "besiegeimmediate", "laborerbiological", "glassesburritos", "golfadolescent", "closetragefilled", "miserableoption", "lepecajole", "tragicgarboard", "consultantsplendid", "salarybellbottoms", "armedthey", "lecternfemale", "topmastbrag", "initiativecommunity", "manongoing", "wrestleglide", "guillemotpursue", "cheapsystem", "welshnotice", "hundredwardroom", "almondsharmful", "quicklyunbreaking", "drunkarddray", "unbalancedamazing", "beingpiston", "creationpigstep", "taboonightgown", "gargantuansubdued", "leavescerebrum", "frostyour", "motionlessbecome", "huttrackball", "columninjury", "cheesesteakgerbil", "fortunepod", "supportwastes", "tippedprincipal", "boltchick", "estimatorscooter", "seagulltime", "birdstock", "bureaucratzap", "referencequack", "greaterneigh", "rabbitsiege", "turnalluring", "confrontcustom", "becausesong", "mildlabored", "postboozer", "restlessjerk", "omniscientchough", "sockbucket", "guffawshell", "garagehoe", "urethralater", "vivaciousemigrate", "mendingmean", "draworange", "frisbeeregretful", "companywashboard", "floataspiring", "freshtea", "streetswarm", "rissolesran", "ashamedsorry", "gatherdirt", "softwarelack", "obsessedinstant", "oleanderastronomer", "councilbetter", "irateburgee", "polentaadventure", "lutediaphragm", "levercloser", "somethingagressive", "kookaburramechanic", "windsurfermuffin", "parcelstaid"]
 let entriesToAdd = 22
-let scoreboarObjects = Array.from(new Array(entriesToAdd))
-    .map(e => getRandomObject())
-    .sort((a,b) => b.karma - a.karma)
-    .forEach(e => addScoreboardEntry(e))
 
-function getRandomObject() {
+let scoreboardGroups = ["alive", "dead", "spectator"]
+let playerCounter = 0 
+
+scoreboardGroups.map(e => {
+    let group = createGroup(e)
+    let players = getPlayers(2+Math.floor(Math.random()*8))
+    if(playerCounter += players.length){
+        players.forEach( player => addGroupEntry(group, player))
+        scoreboardContent.appendChild(group)
+    }
+})
+document.querySelector(".playerCounter").innerHTML = playerCounter
+
+function getPlayers(amount) {
+    return Array.from(new Array(amount))
+    .map(e => getRandomPlayerData())
+    .sort((a,b) => b.karma - a.karma)
+}
+
+function getRandomPlayerData() {
     let username = usernames.shift(Math.floor(Math.random() * usernames.length))
     let values = {
         name: username,
@@ -31,7 +46,17 @@ function getRandomObject() {
     }
     return values
 }
-function addScoreboardEntry(values) {
+
+function addGroupEntry(group, values) {
+    let headerline = createHeaderline(values)
+    group.appendChild(headerline)
+}
+function createGroup(type) {
+    let group = document.createElement("div")
+    group.className = "scoreboard-group "+ type
+    return group
+}
+function createHeaderline(values) {
     let headerline = document.createElement("div")
     headerline.className = "headerline"
     Object.values(values).forEach(e => {
@@ -39,5 +64,5 @@ function addScoreboardEntry(values) {
         span.innerHTML = e
         headerline.appendChild(span)
     })
-    scoreboardContent.appendChild(headerline)
+    return headerline
 }

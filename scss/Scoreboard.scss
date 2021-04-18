@@ -1,6 +1,31 @@
 @import "Panel";
 @import "general";
 
+@mixin scoreboard-group($color, $text ) {
+    &:before {
+        position: absolute;
+        content: $text;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 0 10px;
+        display: block;
+        left: 30px;
+        margin-top: -18px;
+        background-color: $color;
+        font-size: .8em;
+    }
+   
+    border-width: 2px;
+    border-style: solid;
+    // border-image: linear-gradient(180deg, $color 0%, $color 80%, rgba(0,0,0,0) 100%);
+    border-image: linear-gradient( to bottom, $color,$color, rgba(0, 0, 0, 0) ) 1 1%;
+    border-color: $color;
+    border-right-width: 0;
+    border-left-width: 1px;
+
+    margin-top: 20px;
+}
+
 .scoreboard {
     @extend .panel;
     @extend .panel.xl;
@@ -33,21 +58,13 @@
         padding: 0;
         max-height: 500px;
         position: relative;
+        
+        // @include scoreboard-group(#3F7E51, "alive");
         .scoreboard-group {
-            &:before {
-                position: absolute;
-                content: "Player alive";
-                border-top-left-radius: 4px;
-                border-top-right-radius: 4px;
-                padding: 0 10px;
-                display: block;
-                left: 30px;
-                margin-top: -18px;
-                background-color: #3F7E51;
-                font-size: .8em;
-            }
-            margin-top: 20px;
-            border-top:2px solid #3F7E51
+            &.alive { @include scoreboard-group(#3F7E51, "Alive") }
+            // &.missing { @include scoreboard-group(#, "Missing") }
+            &.dead { @include scoreboard-group(#AF262F, "Dead") }
+            &.spectator { @include scoreboard-group(#BA8107, "Spectator") }
         }
         .headerline:nth-child(1n) {
             background-color: #2a2a2a66;
@@ -73,3 +90,5 @@
     }
 
 }
+
+// #3F7E51
