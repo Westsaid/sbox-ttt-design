@@ -6,6 +6,7 @@
     @extend .panel.xl;
 
     .header {
+        padding-bottom: 0;
         .top {
             display: flex;
             .logo{
@@ -14,6 +15,43 @@
             }
             margin-bottom: 25px;
         }
+
+        .headerline {
+            margin: 0px -30px;
+            height: unset;
+            font-weight: 500;
+            font-size:1.2em;
+            align-items: flex-end;
+            .enemys {
+                font-size:2em;
+                color:var(--innocent-green)
+            }
+        }
+    }
+
+    main {
+        padding: 0;
+        .headerline:nth-child(1n) {
+            background-color: #2a2a2a66;
+        }
+        .headerline:nth-child(2n) {
+            background-color: #0A0A0A66;
+        }
+    }
+
+    .headerline {
+        height: 25px;
+        display: flex;
+        flex-flow: row wrap;
+        & > * {
+            flex-basis: 70px;
+            text-align: center;
+        }
+        & > *:nth-child(1) {
+            flex-grow: 2;
+            padding-left: 30px;
+            text-align: left;
+        }        
     }
 
 }

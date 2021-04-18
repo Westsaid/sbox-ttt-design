@@ -12,7 +12,7 @@ body {
 .btn {
   border: none;
   color: white;
-  padding: 4px 40px;
+  padding: 4px 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -71,6 +71,7 @@ body {
 
 .panel main, .scoreboard main {
   padding: 16px 30px;
+  overflow-y: auto;
 }
 
 .panel main::-webkit-scrollbar, .scoreboard main::-webkit-scrollbar {
@@ -133,7 +134,7 @@ body {
 .btn {
   border: none;
   color: white;
-  padding: 4px 40px;
+  padding: 4px 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -157,6 +158,10 @@ body {
   font-size: 0.9em;
 }
 
+.scoreboard .header {
+  padding-bottom: 0;
+}
+
 .scoreboard .header .top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -167,5 +172,57 @@ body {
 .scoreboard .header .top .logo {
   width: 100px;
   margin-right: 20px;
+}
+
+.scoreboard .header .headerline {
+  margin: 0px -30px;
+  height: unset;
+  font-weight: 500;
+  font-size: 1.2em;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.scoreboard .header .headerline .enemys {
+  font-size: 2em;
+  color: var(--innocent-green);
+}
+
+.scoreboard main {
+  padding: 0;
+}
+
+.scoreboard main .headerline:nth-child(1n) {
+  background-color: #2a2a2a66;
+}
+
+.scoreboard main .headerline:nth-child(2n) {
+  background-color: #0A0A0A66;
+}
+
+.scoreboard .headerline {
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.scoreboard .headerline > * {
+  -ms-flex-preferred-size: 70px;
+      flex-basis: 70px;
+  text-align: center;
+}
+
+.scoreboard .headerline > *:nth-child(1) {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  padding-left: 30px;
+  text-align: left;
 }
 /*# sourceMappingURL=Scoreboard.css.map */

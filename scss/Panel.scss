@@ -27,6 +27,7 @@
     main {
         padding: 16px 30px;
         @include scrollbars(10px,var(--traitor-red), #fff9);
+        overflow-y: auto;
     }
     footer {
         border-bottom-left-radius: inherit;

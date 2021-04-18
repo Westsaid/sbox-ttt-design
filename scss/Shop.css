@@ -167,7 +167,6 @@ body {
 
 .shop main {
   max-height: 400px;
-  overflow-y: auto;
 }
 
 .shop footer {
