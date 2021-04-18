@@ -32,6 +32,23 @@
     main {
         padding: 0;
         max-height: 500px;
+        position: relative;
+        .scoreboard-group {
+            &:before {
+                position: absolute;
+                content: "Player alive";
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                padding: 0 10px;
+                display: block;
+                left: 30px;
+                margin-top: -18px;
+                background-color: #3F7E51;
+                font-size: .8em;
+            }
+            margin-top: 20px;
+            border-top:2px solid #3F7E51
+        }
         .headerline:nth-child(1n) {
             background-color: #2a2a2a66;
         }
