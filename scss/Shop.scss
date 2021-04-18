@@ -1,0 +1,75 @@
+@import 'Panel';
+@import 'general';
+
+.shop {
+    @extend .panel;
+    @extend .panel.big;
+    
+    .item-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    footer {
+        display: flex;
+        .price {
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+    .item {
+        flex-basis:20%;
+        transition: all linear 0.05s;
+        margin-bottom: 25px;
+        .item-holder {
+            width: 100px;
+            cursor: pointer;
+            &:hover {
+                border-width: 2px;
+                transform: scale(1.05);
+                .icon{
+                    box-shadow: 0px 2px 5px 1px #0000004d;
+    
+                }
+            }
+
+            .icon {
+                height:100px;
+                width:100px;
+                background: #FAFAFA;
+                border-radius: 4px;
+                border: 1px solid #031421;
+                text-align: center;
+                img {
+                    max-width: 80%;
+                    margin-top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        
+        .price {
+            display: block;
+            text-align:center;
+            margin-top: 5px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        &.active {
+            border-width: 2px;
+            transform: scale(1.05);
+            .icon{
+                box-shadow: 0px 2px 5px 1px #0000004d;
+
+            }
+        }
+        &.active {
+            cursor: default;
+        }
+    }
+}
