@@ -1,3 +1,41 @@
+body {
+  --traitor-red: #DF2935;
+  --innocent-green: #1BC54E;
+  --detective-blue: #2196F3;
+  --font-black: #2A2A2A;
+  --font-white: #FAFAFA;
+  --highlight-orange: #FFAE00;
+  --border-color: #363636;
+  font-family: 'Poppins';
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 4px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 2px;
+  background-color: var(--traitor-red);
+}
+
+.price::before {
+  content: '$';
+  margin-right: 0.5rem;
+  background: var(--traitor-red);
+  border-radius: 50%;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
 .panel, .shop {
   background-color: #0009;
   border: 1px solid #000;
@@ -6,7 +44,9 @@
   color: var(--font-white);
 }
 
-.panel h2, .shop h2, .panel h3, .shop h3 {
+.panel h2, .shop h2,
+.panel h3,
+.shop h3 {
   margin: 0;
 }
 
@@ -15,7 +55,9 @@
   font-weight: 500;
 }
 
-.panel h3, .shop h3 {
+
+.panel h3,
+.shop h3 {
   font-weight: 400;
   font-size: 18px;
 }
@@ -29,26 +71,19 @@
 
 .panel main, .shop main {
   padding: 16px 30px;
-  /* width */
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
 }
 
-.panel main ::-webkit-scrollbar, .shop main ::-webkit-scrollbar {
-  width: 10px;
+.panel main::-webkit-scrollbar, .shop main::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-.panel main ::-webkit-scrollbar-track, .shop main ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.panel main::-webkit-scrollbar-thumb, .shop main::-webkit-scrollbar-thumb {
+  background: pink;
 }
 
-.panel main ::-webkit-scrollbar-thumb, .shop main ::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-.panel main ::-webkit-scrollbar-thumb:hover, .shop main ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.panel main::-webkit-scrollbar-track, .shop main::-webkit-scrollbar-track {
+  background: red;
 }
 
 .panel footer, .shop footer {
@@ -148,15 +183,19 @@ body {
   cursor: pointer;
 }
 
-.shop .item .item-holder:hover {
+.shop .item .item-holder.active, .shop .item .item-holder:hover {
   border-width: 2px;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.shop .item .item-holder:hover .icon {
+.shop .item .item-holder.active .icon, .shop .item .item-holder:hover .icon {
   -webkit-box-shadow: 0px 2px 5px 1px #0000004d;
           box-shadow: 0px 2px 5px 1px #0000004d;
+}
+
+.shop .item .item-holder.active {
+  cursor: default;
 }
 
 .shop .item .item-holder .icon {
@@ -181,20 +220,5 @@ body {
   margin-top: 5px;
   font-size: 22px;
   font-weight: 500;
-}
-
-.shop .item.active {
-  border-width: 2px;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.shop .item.active .icon {
-  -webkit-box-shadow: 0px 2px 5px 1px #0000004d;
-          box-shadow: 0px 2px 5px 1px #0000004d;
-}
-
-.shop .item.active {
-  cursor: default;
 }
 /*# sourceMappingURL=Shop.css.map */

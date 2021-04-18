@@ -28,13 +28,16 @@
         .item-holder {
             width: 100px;
             cursor: pointer;
-            &:hover {
+            &.active,&:hover {
                 border-width: 2px;
                 transform: scale(1.05);
                 .icon{
                     box-shadow: 0px 2px 5px 1px #0000004d;
     
                 }
+            }
+            &.active {
+                cursor: default;
             }
 
             .icon {
@@ -60,16 +63,6 @@
             font-weight: 500;
         }
 
-        &.active {
-            border-width: 2px;
-            transform: scale(1.05);
-            .icon{
-                box-shadow: 0px 2px 5px 1px #0000004d;
 
-            }
-        }
-        &.active {
-            cursor: default;
-        }
     }
 }
