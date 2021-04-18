@@ -1,0 +1,19 @@
+@import "Panel";
+@import "general";
+
+.scoreboard {
+    @extend .panel;
+    @extend .panel.xl;
+
+    .header {
+        .top {
+            display: flex;
+            .logo{
+                width: 100px;
+                margin-right: 20px
+            }
+            margin-bottom: 25px;
+        }
+    }
+
+}

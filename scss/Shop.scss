@@ -1,10 +1,10 @@
-@import 'Panel';
-@import 'general';
+@import "Panel";
+@import "general";
 
 .shop {
     @extend .panel;
-    @extend .panel.big;
-    
+    @extend .panel.lg;
+
     .item-wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -16,24 +16,30 @@
 
     footer {
         display: flex;
+        justify-content: space-between;
         .price {
             font-size: 22px;
             font-weight: 500;
+            margin-right: 10px;
+        }
+        .right {
+            display: flex;
+            align-items: center;
         }
     }
     .item {
-        flex-basis:20%;
-        transition: all linear 0.05s;
+        flex-basis: 20%;
         margin-bottom: 25px;
         .item-holder {
             width: 100px;
+            transition: all linear 0.05s;
             cursor: pointer;
-            &.active,&:hover {
+            &.active,
+            &:hover {
                 border-width: 2px;
                 transform: scale(1.05);
-                .icon{
+                .icon {
                     box-shadow: 0px 2px 5px 1px #0000004d;
-    
                 }
             }
             &.active {
@@ -41,9 +47,9 @@
             }
 
             .icon {
-                height:100px;
-                width:100px;
-                background: #FAFAFA;
+                height: 100px;
+                width: 100px;
+                background: #fafafa;
                 border-radius: 4px;
                 border: 1px solid #031421;
                 text-align: center;
@@ -54,15 +60,13 @@
                 }
             }
         }
-        
+
         .price {
             display: block;
-            text-align:center;
+            text-align: center;
             margin-top: 5px;
             font-size: 22px;
             font-weight: 500;
         }
-
-
     }
 }

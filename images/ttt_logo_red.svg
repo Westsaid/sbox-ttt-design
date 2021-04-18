@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><polygon points="11.99 56.98 39.72 73 39.72 40.97 11.99 24.96 11.99 56.98" style="fill:none;stroke:#df2935;stroke-linecap:square;stroke-linejoin:round"/><polygon points="39.72 8.95 67.45 24.96 39.72 40.97 11.99 24.96 39.72 8.95" style="fill:none;stroke:#df2935;stroke-linecap:square;stroke-linejoin:round"/><polygon points="67.45 56.98 39.72 73 39.72 40.97 67.45 24.96 67.45 56.98" style="fill:#df2935;stroke:#df2935;stroke-linecap:square;stroke-linejoin:round"/><path d="M49.27,46.22V48.6l-2.93,1.69V62.57l-2.2,1.28V51.56l-2.93,1.69V50.88Z" style="fill:#fff"/><path d="M58.36,41v2.37L55.43,45V57.33l-2.2,1.27V46.31L50.3,48V45.63Z" style="fill:#fff"/><path d="M67.45,35.73V38.1l-2.93,1.69V52.08l-2.21,1.27V41.07l-2.93,1.69V40.39Z" style="fill:#fff"/><polygon points="58.84 24.47 57.03 23.42 60.44 21.45 62.25 22.5 58.84 24.47" style="fill:#df2935;opacity:0.9"/><polygon points="55.86 22.75 54.05 21.7 57.47 19.73 59.28 20.78 55.86 22.75" style="fill:#df2935;opacity:0.9"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#DF2935;stroke-linecap:square;stroke-linejoin:round;}
+	.st1{fill:#DF2935;stroke:#DF2935;stroke-linecap:square;stroke-linejoin:round;}
+	.st2{fill:#FFFFFF;}
+	.st3{opacity:0.9;fill:#DF2935;enable-background:new    ;}
+</style>
+<polygon class="st0" points="5.1,61 39.7,81 39.7,41 5.1,21 "/>
+<polygon class="st0" points="39.7,1 74.3,21 39.7,41 5.1,21 "/>
+<polygon class="st1" points="74.3,61 39.7,81 39.7,41 74.3,21 "/>
+<path class="st2" d="M51.6,47.5v3L48,52.6v15.3l-2.7,1.6V54.2l-3.7,2.1v-3L51.6,47.5z"/>
+<path class="st2" d="M63,41v3l-3.7,2v15.4L56.6,63V47.6l-3.7,2.1v-3L63,41z"/>
+<path class="st2" d="M74.3,34.4v3l-3.7,2.1v15.3l-2.8,1.6V41.1l-3.7,2.1v-3L74.3,34.4z"/>
+<polygon class="st3" points="63.6,20.4 61.3,19.1 65.6,16.6 67.8,17.9 "/>
+<polygon class="st3" points="59.9,18.2 57.6,16.9 61.9,14.4 64.1,15.8 "/>
+</svg>

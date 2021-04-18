@@ -12,7 +12,7 @@ body {
 .btn {
   border: none;
   color: white;
-  padding: 4px 40px;
+  padding: 4px 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -96,17 +96,26 @@ body {
   padding: 16px 30px;
 }
 
-.panel.small, .small.shop {
+.panel.sm, .sm.shop {
   border-radius: 4px;
   max-width: 500px;
 }
 
-.panel.big, .shop {
+.panel.lg, .shop {
   border-radius: 8px;
   max-width: 800px;
 }
 
-.panel.big .header, .shop .header {
+.panel.lg .header, .shop .header {
+  padding: 16px 30px;
+}
+
+.panel.xl, .xl.shop {
+  border-radius: 8px;
+  max-width: 1200px;
+}
+
+.panel.xl .header, .xl.shop .header {
   padding: 16px 30px;
 }
 
@@ -124,7 +133,7 @@ body {
 .btn {
   border: none;
   color: white;
-  padding: 4px 40px;
+  padding: 4px 50px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -165,23 +174,36 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .shop footer .price {
   font-size: 22px;
   font-weight: 500;
+  margin-right: 10px;
+}
+
+.shop footer .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .shop .item {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
-  -webkit-transition: all linear 0.05s;
-  transition: all linear 0.05s;
   margin-bottom: 25px;
 }
 
 .shop .item .item-holder {
   width: 100px;
+  -webkit-transition: all linear 0.05s;
+  transition: all linear 0.05s;
   cursor: pointer;
 }
 
@@ -203,7 +225,7 @@ body {
 .shop .item .item-holder .icon {
   height: 100px;
   width: 100px;
-  background: #FAFAFA;
+  background: #fafafa;
   border-radius: 4px;
   border: 1px solid #031421;
   text-align: center;
