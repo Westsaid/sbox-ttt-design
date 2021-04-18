@@ -191,6 +191,7 @@ body {
 
 .scoreboard main {
   padding: 0;
+  max-height: 500px;
 }
 
 .scoreboard main .headerline:nth-child(1n) {
