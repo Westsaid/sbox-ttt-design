@@ -1,6 +1,6 @@
 body {
     --traitor-red: #DF2935; 
-    --innocent-green: hsl(138, 76%, 44%); 
+    --innocent-green: #1bc54e; 
     --detective-blue: #2196F3; 
     --font-black: #2A2A2A; 
     --font-white: #FAFAFA; 
@@ -15,15 +15,18 @@ body {
       height: 6px;
       opacity: 0;
       margin-right: 2px;
+      transition: all linear 0.1s;
     }
-  
+    &::-webkit-scrollbar:hover{
+      background-color: #fffc;
+    }
     &::-webkit-scrollbar-thumb {
       background: $foreground-color;
+      opacity: 0;
     }
   
     &::-webkit-scrollbar-track {
-      
-      background: #fff4;
+      background: #fffa;
     }
   }
 

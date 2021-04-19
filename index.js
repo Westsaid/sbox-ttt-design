@@ -25,6 +25,7 @@ scoreboardGroups.map(e => {
     let players = getPlayers(2+Math.floor(Math.random()*8))
     if(playerCounter += players.length){
         players.forEach( player => addGroupEntry(group, player))
+        group.firstElementChild.innerHTML += " - "+players.length
         scoreboardContent.appendChild(group)
     }
 })
@@ -49,10 +50,17 @@ function getRandomPlayerData() {
 
 function addGroupEntry(group, values) {
     let headerline = createHeaderline(values)
-    group.appendChild(headerline)
+    group.lastElementChild.appendChild(headerline)
 }
 function createGroup(type) {
     let group = document.createElement("div")
+    let label = document.createElement("div")
+    label.innerHTML = type
+    label.className = "label"
+    let content = document.createElement("div")
+    content.className = "content"
+    group.appendChild(label)
+    group.appendChild(content)
     group.className = "scoreboard-group "+ type
     return group
 }

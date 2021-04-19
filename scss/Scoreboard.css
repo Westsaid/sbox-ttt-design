@@ -1,6 +1,6 @@
 body {
   --traitor-red: #DF2935;
-  --innocent-green: hsl(138, 76%, 44%);
+  --innocent-green: #1bc54e;
   --detective-blue: #2196F3;
   --font-black: #2A2A2A;
   --font-white: #FAFAFA;
@@ -64,7 +64,7 @@ body {
 
 .panel .header, .scoreboard .header {
   border-bottom: var(--border-color) 1px solid;
-  background-color: #0009;
+  background-color: #0007;
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 }
@@ -79,21 +79,28 @@ body {
   height: 6px;
   opacity: 0;
   margin-right: 2px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
+}
+
+.panel main::-webkit-scrollbar:hover, .scoreboard main::-webkit-scrollbar:hover {
+  background-color: #fffc;
 }
 
 .panel main::-webkit-scrollbar-thumb, .scoreboard main::-webkit-scrollbar-thumb {
   background: var(--traitor-red);
+  opacity: 0;
 }
 
 .panel main::-webkit-scrollbar-track, .scoreboard main::-webkit-scrollbar-track {
-  background: #fff4;
+  background: #fffa;
 }
 
 .panel footer, .scoreboard footer {
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   border-top: var(--border-color) 1px solid;
-  background-color: #0009;
+  background-color: #0007;
   padding: 16px 30px;
 }
 
@@ -122,7 +129,7 @@ body {
 
 body {
   --traitor-red: #DF2935;
-  --innocent-green: hsl(138, 76%, 44%);
+  --innocent-green: #1bc54e;
   --detective-blue: #2196F3;
   --font-black: #2A2A2A;
   --font-white: #FAFAFA;
@@ -179,9 +186,9 @@ body {
   height: unset;
   font-weight: 500;
   font-size: 1.2em;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .scoreboard .header .headerline .enemys {
@@ -196,8 +203,37 @@ body {
 }
 
 .scoreboard main .scoreboard-group.alive {
-  -webkit-box-shadow: #00000040 0px 2px 5px 2px;
-          box-shadow: #00000040 0px 2px 5px 2px;
+  margin-top: 5px;
+}
+
+.scoreboard main .scoreboard-group.alive div.label {
+  z-index: 100;
+  border-top-right-radius: 4px;
+  padding: 0 10px 0 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: uppercase;
+  background-color: #3F7E51;
+  font-size: .8em;
+}
+
+.scoreboard main .scoreboard-group.alive div.label:before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  content: "\276F";
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.scoreboard main .scoreboard-group.alive .content {
+  -webkit-box-shadow: #00000040 0px 3px 5px -1px;
+          box-shadow: #00000040 0px 3px 5px -1px;
   border-width: 2px;
   border-style: solid;
   -o-border-image: linear-gradient(to bottom, #3F7E51, #3F7E51, #3F7E51, rgba(0, 0, 0, 0)) 1 1%;
@@ -207,25 +243,40 @@ body {
   border-right-width: 0;
   border-left-width: 1px;
   border-bottom-width: 0;
-  margin-top: 20px;
-}
-
-.scoreboard main .scoreboard-group.alive:before {
-  position: absolute;
-  content: "Alive -  ...";
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: 0 10px;
-  display: block;
-  left: 30px;
-  margin-top: -18px;
-  background-color: #3F7E51;
-  font-size: .8em;
 }
 
 .scoreboard main .scoreboard-group.dead {
-  -webkit-box-shadow: #00000040 0px 2px 5px 2px;
-          box-shadow: #00000040 0px 2px 5px 2px;
+  margin-top: 5px;
+}
+
+.scoreboard main .scoreboard-group.dead div.label {
+  z-index: 100;
+  border-top-right-radius: 4px;
+  padding: 0 10px 0 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: uppercase;
+  background-color: #AF262F;
+  font-size: .8em;
+}
+
+.scoreboard main .scoreboard-group.dead div.label:before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  content: "\276F";
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.scoreboard main .scoreboard-group.dead .content {
+  -webkit-box-shadow: #00000040 0px 3px 5px -1px;
+          box-shadow: #00000040 0px 3px 5px -1px;
   border-width: 2px;
   border-style: solid;
   -o-border-image: linear-gradient(to bottom, #AF262F, #AF262F, #AF262F, rgba(0, 0, 0, 0)) 1 1%;
@@ -235,25 +286,40 @@ body {
   border-right-width: 0;
   border-left-width: 1px;
   border-bottom-width: 0;
-  margin-top: 20px;
-}
-
-.scoreboard main .scoreboard-group.dead:before {
-  position: absolute;
-  content: "Dead -  ...";
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: 0 10px;
-  display: block;
-  left: 30px;
-  margin-top: -18px;
-  background-color: #AF262F;
-  font-size: .8em;
 }
 
 .scoreboard main .scoreboard-group.spectator {
-  -webkit-box-shadow: #00000040 0px 2px 5px 2px;
-          box-shadow: #00000040 0px 2px 5px 2px;
+  margin-top: 5px;
+}
+
+.scoreboard main .scoreboard-group.spectator div.label {
+  z-index: 100;
+  border-top-right-radius: 4px;
+  padding: 0 10px 0 0;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: uppercase;
+  background-color: #BA8107;
+  font-size: .8em;
+}
+
+.scoreboard main .scoreboard-group.spectator div.label:before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  content: "\276F";
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.scoreboard main .scoreboard-group.spectator .content {
+  -webkit-box-shadow: #00000040 0px 3px 5px -1px;
+          box-shadow: #00000040 0px 3px 5px -1px;
   border-width: 2px;
   border-style: solid;
   -o-border-image: linear-gradient(to bottom, #BA8107, #BA8107, #BA8107, rgba(0, 0, 0, 0)) 1 1%;
@@ -263,20 +329,6 @@ body {
   border-right-width: 0;
   border-left-width: 1px;
   border-bottom-width: 0;
-  margin-top: 20px;
-}
-
-.scoreboard main .scoreboard-group.spectator:before {
-  position: absolute;
-  content: "Spectator -  ...";
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: 0 10px;
-  display: block;
-  left: 30px;
-  margin-top: -18px;
-  background-color: #BA8107;
-  font-size: .8em;
 }
 
 .scoreboard main .headerline:nth-child(1n) {
