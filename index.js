@@ -66,6 +66,11 @@ function createGroup(type) {
 }
 function createHeaderline(values) {
     let headerline = document.createElement("div")
+    let imageHolder = document.createElement("div")
+    let image = document.createElement('img')
+    image.src = "images/steam_standard.png"
+    imageHolder.appendChild(image)
+    headerline.appendChild(imageHolder)
     headerline.className = "headerline"
     Object.values(values).forEach(e => {
         let span = document.createElement("span")
