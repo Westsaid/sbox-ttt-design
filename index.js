@@ -5,24 +5,27 @@ let shop = document.querySelector(".shop")
 document.addEventListener('keydown', (e) => {
     if (e.code == "Tab") {
         e.preventDefault()
-        scoreboard.className = "scoreboard fixed open" 
         if (!active) {
-            active = document.addEventListener("keyup", e2 => {
+            scoreboard.className = "scoreboard fixed open" 
+            active = true
+            let listener = document.addEventListener("keyup", e2 => {
                 if (e2.code == "Tab") {
                     scoreboard.className = "scoreboard fixed"
-                    document.removeEventListener("keyup",active)
+                    document.removeEventListener("keyup",listener)
                     active = undefined 
                 }
             })
         }
     }
     else if (e.code == "KeyB") {
-        shop.className = "shop fixed open" 
+        console.log(active)
         if (!active) {
-            active = document.addEventListener("keyup", e2 => {
+            shop.className = "shop fixed open" 
+            active = true
+            let listener = document.addEventListener("keyup", e2 => {
                 if (e2.code == "KeyB") {
                     shop.className = "shop fixed"
-                    document.removeEventListener("keyup",active)
+                    document.removeEventListener("keyup",listener)
                     active = undefined 
                 }
             })
