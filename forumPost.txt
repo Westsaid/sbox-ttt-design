@@ -1,0 +1,27 @@
+![sbox_ttt_logo_red_256|256x256, 75%](upload://lg8rrB4MZBqkLtWme0mkYBhSrHV.png)  **s&box TTT** - In developement!
+
+
+We are happy to announce that TTT for s&box is under development. Our goal is to bring TTT to the next level by using the technical gifts s&box provides and make improvements to the gameplay and general UX. We also aim for good modularity, so that for example the shop items can be expanded in the best way.  
+
+**The team:**
+* @76561197986029044 : Project lead, Code
+* @Westsaid : UI, Code
+* @kid : Icons
+
+
+**Current state**
+
+* **Code**: We started work on the code, we mainly used the currently three available repos to get basic knowledge and to copy some rudimentary snippets into our code. Of course we can't run our code at the moment since we do not have access yet, but things like round logic, roles and karma are already implemented as best as possible. We hope to get early access soon to further boost the development.
+* **UI**: We figured out a style and made a couple of mockups. Also we started to create SCSS/HTML versions of them, we are happy to share their current state with you:
+-Shop:
+![image|690x351](upload://vkXiSSupgpo98DigHqI3PYoJl5B.jpeg)   
+.
+-Scoreboard:
+![image|690x351](upload://noBycOh8Ki9LzHBj8ZVwqUHtLhW.jpeg)  
+.
+These have been strongly build using display: flex and other modern CSS attributes, we are pretty curious how much needs to be tweaked when porting it into s&box. We will report every of difference and also add this to the list of then (currently) unsupported properties.
+
+
+We will update this post, share insights and keep you updated as soon as there is more. We love to hear your feedback and suggestions for the new trouble in terrorist town. We will share details on how to contribute, especially in the content creation and mapping, as soon as possible!
+
+Cya!

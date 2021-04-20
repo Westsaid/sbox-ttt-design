@@ -5,6 +5,11 @@
     @extend .panel;
     @extend .panel.lg;
 
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
     .item-wrapper {
         display: flex;
         flex-wrap: wrap;

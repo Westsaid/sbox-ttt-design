@@ -55,9 +55,10 @@ let playerCounter = 0
 
 scoreboardGroups.map(e => {
     let group = createGroup(e)
-    let players = getPlayers(2 + Math.floor(Math.random() * 8))
-    if (playerCounter += players.length) {
-        players.forEach(player => addGroupEntry(group, player))
+    let players = getPlayers(2+Math.floor(Math.random()*8))
+    if(playerCounter += players.length){
+        players.forEach( player => addGroupEntry(group, player))
+        group.firstElementChild.innerHTML += " - "+players.length
         scoreboardContent.appendChild(group)
     }
 })
@@ -82,15 +83,27 @@ function getRandomPlayerData() {
 
 function addGroupEntry(group, values) {
     let headerline = createHeaderline(values)
-    group.appendChild(headerline)
+    group.lastElementChild.appendChild(headerline)
 }
 function createGroup(type) {
     let group = document.createElement("div")
-    group.className = "scoreboard-group " + type
+    let label = document.createElement("div")
+    label.innerHTML = type
+    label.className = "label"
+    let content = document.createElement("div")
+    content.className = "content"
+    group.appendChild(label)
+    group.appendChild(content)
+    group.className = "scoreboard-group "+ type
     return group
 }
 function createHeaderline(values) {
     let headerline = document.createElement("div")
+    let imageHolder = document.createElement("div")
+    let image = document.createElement('img')
+    image.src = "images/steam_standard.png"
+    imageHolder.appendChild(image)
+    headerline.appendChild(imageHolder)
     headerline.className = "headerline"
     Object.values(values).forEach(e => {
         let span = document.createElement("span")
