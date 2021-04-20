@@ -1,11 +1,25 @@
 @import 'general';
 
 .panel {
+    user-select: none;
     background-color: #0009;
     border: 1px solid #000;
     border-radius: 2px;
     margin: auto;
     color: var(--font-white);
+    transition: opacity linear 0.05s;
+    &.fixed {
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -75%);
+        opacity: 0%;
+        &.open {
+            opacity: 100%;
+            z-index: 100;
+        }
+    }
+
     h2,
     h3 {
         margin: 0;
@@ -26,7 +40,7 @@
     }
     main {
         padding: 16px 30px;
-        @include scrollbars(10px,var(--traitor-red), #fff9);
+        @include scrollbars(10px,#ffae0073, #fff3);
         overflow-y: auto;
     }
     footer {
@@ -39,11 +53,13 @@
     &.sm {
         border-radius: 4px;
         max-width: 500px;
+        width:100%;
     }
 
     &.lg {
         border-radius: 8px;
         max-width: 800px;
+        width:100%;
         .header {
             padding: 16px 30px;
         }
@@ -51,6 +67,7 @@
     &.xl {
         border-radius: 8px;
         max-width: 1200px;
+        width:100%;
         .header {
             padding: 16px 30px;
         }

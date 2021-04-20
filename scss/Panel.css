@@ -1,6 +1,6 @@
 body {
   --traitor-red: #DF2935;
-  --innocent-green: hsl(138, 76%, 44%);
+  --innocent-green: #1bc54e;
   --detective-blue: #2196F3;
   --font-black: #2A2A2A;
   --font-white: #FAFAFA;
@@ -37,11 +37,31 @@ body {
 }
 
 .panel {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background-color: #0009;
   border: 1px solid #000;
   border-radius: 2px;
   margin: auto;
   color: var(--font-white);
+  -webkit-transition: opacity linear 0.05s;
+  transition: opacity linear 0.05s;
+}
+
+.panel.fixed {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+  opacity: 0%;
+}
+
+.panel.fixed.open {
+  opacity: 100%;
+  z-index: 100;
 }
 
 .panel h2,
@@ -76,14 +96,21 @@ body {
   height: 6px;
   opacity: 0;
   margin-right: 2px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
+}
+
+.panel main::-webkit-scrollbar:hover {
+  background-color: #fffc;
 }
 
 .panel main::-webkit-scrollbar-thumb {
-  background: var(--traitor-red);
+  background: #ffae0073;
+  opacity: 0;
 }
 
 .panel main::-webkit-scrollbar-track {
-  background: #fff4;
+  background: #fffa;
 }
 
 .panel footer {
@@ -97,11 +124,13 @@ body {
 .panel.sm {
   border-radius: 4px;
   max-width: 500px;
+  width: 100%;
 }
 
 .panel.lg {
   border-radius: 8px;
   max-width: 800px;
+  width: 100%;
 }
 
 .panel.lg .header {
@@ -111,6 +140,7 @@ body {
 .panel.xl {
   border-radius: 8px;
   max-width: 1200px;
+  width: 100%;
 }
 
 .panel.xl .header {

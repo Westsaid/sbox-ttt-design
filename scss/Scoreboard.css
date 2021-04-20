@@ -1,6 +1,6 @@
 body {
   --traitor-red: #DF2935;
-  --innocent-green: hsl(138, 76%, 44%);
+  --innocent-green: #1bc54e;
   --detective-blue: #2196F3;
   --font-black: #2A2A2A;
   --font-white: #FAFAFA;
@@ -37,11 +37,30 @@ body {
 }
 
 .panel, .scoreboard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background-color: #0009;
   border: 1px solid #000;
   border-radius: 2px;
   margin: auto;
   color: var(--font-white);
+  -webkit-transition: opacity linear 0.05s;
+  transition: opacity linear 0.05s;
+}
+
+.panel.fixed, .fixed.scoreboard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+  opacity: 0%;
+}
+
+.panel.fixed.open, .fixed.open.scoreboard {
+  opacity: 100%;
 }
 
 .panel h2, .scoreboard h2,
@@ -79,14 +98,21 @@ body {
   height: 6px;
   opacity: 0;
   margin-right: 2px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
+}
+
+.panel main::-webkit-scrollbar:hover, .scoreboard main::-webkit-scrollbar:hover {
+  background-color: #fffc;
 }
 
 .panel main::-webkit-scrollbar-thumb, .scoreboard main::-webkit-scrollbar-thumb {
-  background: var(--traitor-red);
+  background: #ffae0073;
+  opacity: 0;
 }
 
 .panel main::-webkit-scrollbar-track, .scoreboard main::-webkit-scrollbar-track {
-  background: #fff4;
+  background: #fffa;
 }
 
 .panel footer, .scoreboard footer {
@@ -100,11 +126,13 @@ body {
 .panel.sm, .sm.scoreboard {
   border-radius: 4px;
   max-width: 500px;
+  width: 100%;
 }
 
 .panel.lg, .lg.scoreboard {
   border-radius: 8px;
   max-width: 800px;
+  width: 100%;
 }
 
 .panel.lg .header, .lg.scoreboard .header {
@@ -114,6 +142,7 @@ body {
 .panel.xl, .scoreboard {
   border-radius: 8px;
   max-width: 1200px;
+  width: 100%;
 }
 
 .panel.xl .header, .scoreboard .header {
@@ -122,7 +151,7 @@ body {
 
 body {
   --traitor-red: #DF2935;
-  --innocent-green: hsl(138, 76%, 44%);
+  --innocent-green: #1bc54e;
   --detective-blue: #2196F3;
   --font-black: #2A2A2A;
   --font-white: #FAFAFA;

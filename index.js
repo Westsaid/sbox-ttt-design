@@ -1,3 +1,36 @@
+// Viewlayer
+let active
+let scoreboard = document.querySelector(".scoreboard")
+let shop = document.querySelector(".shop")
+document.addEventListener('keydown', (e) => {
+    if (e.code == "Tab") {
+        e.preventDefault()
+        scoreboard.className = "scoreboard fixed open" 
+        if (!active) {
+            active = document.addEventListener("keyup", e2 => {
+                if (e2.code == "Tab") {
+                    scoreboard.className = "scoreboard fixed"
+                    document.removeEventListener("keyup",active)
+                    active = undefined 
+                }
+            })
+        }
+    }
+    else if (e.code == "KeyB") {
+        shop.className = "shop fixed open" 
+        if (!active) {
+            active = document.addEventListener("keyup", e2 => {
+                if (e2.code == "KeyB") {
+                    shop.className = "shop fixed"
+                    document.removeEventListener("keyup",active)
+                    active = undefined 
+                }
+            })
+        }
+    }
+});
+
+
 // Shop
 let activeItem
 document.querySelectorAll(".shop .item").forEach(item => {
@@ -18,13 +51,13 @@ let usernames = ["sonsausage", "realtorgas", "besiegeimmediate", "laborerbiologi
 let entriesToAdd = 22
 
 let scoreboardGroups = ["alive", "dead", "spectator"]
-let playerCounter = 0 
+let playerCounter = 0
 
 scoreboardGroups.map(e => {
     let group = createGroup(e)
-    let players = getPlayers(2+Math.floor(Math.random()*8))
-    if(playerCounter += players.length){
-        players.forEach( player => addGroupEntry(group, player))
+    let players = getPlayers(2 + Math.floor(Math.random() * 8))
+    if (playerCounter += players.length) {
+        players.forEach(player => addGroupEntry(group, player))
         scoreboardContent.appendChild(group)
     }
 })
@@ -32,8 +65,8 @@ document.querySelector(".playerCounter").innerHTML = playerCounter
 
 function getPlayers(amount) {
     return Array.from(new Array(amount))
-    .map(e => getRandomPlayerData())
-    .sort((a,b) => b.karma - a.karma)
+        .map(e => getRandomPlayerData())
+        .sort((a, b) => b.karma - a.karma)
 }
 
 function getRandomPlayerData() {
@@ -53,7 +86,7 @@ function addGroupEntry(group, values) {
 }
 function createGroup(type) {
     let group = document.createElement("div")
-    group.className = "scoreboard-group "+ type
+    group.className = "scoreboard-group " + type
     return group
 }
 function createHeaderline(values) {
