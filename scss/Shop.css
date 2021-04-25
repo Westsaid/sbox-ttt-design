@@ -43,7 +43,7 @@ body {
           user-select: none;
   background-color: #0009;
   border: 1px solid #000;
-  border-radius: 2px;
+  border-radius: 4px;
   margin: auto;
   color: var(--font-white);
   -webkit-transition: opacity linear 0.05s;
@@ -258,6 +258,7 @@ body {
 .shop .item .item-holder.active .icon, .shop .item .item-holder:hover .icon {
   -webkit-box-shadow: 0px 2px 5px 1px #0000004d;
           box-shadow: 0px 2px 5px 1px #0000004d;
+  background: #fafafaa1;
 }
 
 .shop .item .item-holder.active {
@@ -267,10 +268,12 @@ body {
 .shop .item .item-holder .icon {
   height: 100px;
   width: 100px;
-  background: #fafafa;
+  background: #fafafa5e;
   border-radius: 4px;
   border: 1px solid #031421;
   text-align: center;
+  -webkit-transition: all linear 0.05s;
+  transition: all linear 0.05s;
 }
 
 .shop .item .item-holder .icon img {

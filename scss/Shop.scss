@@ -44,25 +44,13 @@
                 transform: scale(1.05);
                 .icon {
                     box-shadow: 0px 2px 5px 1px #0000004d;
+                    background: #fafafaa1;
                 }
             }
             &.active {
                 cursor: default;
             }
-
-            .icon {
-                height: 100px;
-                width: 100px;
-                background: #fafafa;
-                border-radius: 4px;
-                border: 1px solid #031421;
-                text-align: center;
-                img {
-                    max-width: 80%;
-                    margin-top: 50%;
-                    transform: translateY(-50%);
-                }
-            }
+            @include icon(100px);
         }
 
         .price {

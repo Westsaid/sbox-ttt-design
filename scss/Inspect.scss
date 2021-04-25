@@ -1,1 +1,6 @@
 @import "Panel";
+
+.inspect {
+    @extend .panel;
+
+}

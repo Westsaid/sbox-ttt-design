@@ -8,7 +8,24 @@ body {
     --border-color: #363636;
     font-family: 'Poppins';
 }
+@mixin icon($size) {
+  .icon {
 
+    height: $size;
+    width: $size;
+    background: #fafafa5e;
+    border-radius: 4px;
+    border: 1px solid #031421;
+    text-align: center;
+    transition: all linear 0.05s;
+
+    img {
+      max-width: 80%;
+      margin-top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
     
     &::-webkit-scrollbar {

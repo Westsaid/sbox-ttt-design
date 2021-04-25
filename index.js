@@ -2,8 +2,9 @@
 let active
 let scoreboard = document.querySelector(".scoreboard")
 let shop = document.querySelector(".shop")
-document.addEventListener('keydown', (e) => {
-    if (e.code == "Tab") {
+
+let overlayFunctions = {
+    scoreboard: (e)  => {
         e.preventDefault()
         if (!active) {
             scoreboard.className = "scoreboard fixed open" 
@@ -16,8 +17,8 @@ document.addEventListener('keydown', (e) => {
                 }
             })
         }
-    }
-    else if (e.code == "KeyB") {
+    },
+    shop: (e) => {
         console.log(active)
         if (!active) {
             shop.className = "shop fixed open" 
@@ -30,7 +31,16 @@ document.addEventListener('keydown', (e) => {
                 }
             })
         }
+    },
+    inspect: (e) => {
+        
     }
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.code == "Tab")  overlayFunctions.scoreboard(e)
+    else if (e.code == "KeyB") overlayFunctions.shop(e)
+    else if (e.code == "KeyC") overlayFunctions.inspect(e)
 });
 
 
