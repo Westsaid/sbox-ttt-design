@@ -2,5 +2,43 @@
 
 .inspect {
     @extend .panel;
-
+    @include icon(75px);
+    min-width: 600px;
+    padding: 6px 12px;
+    text-align: center;
+    .headline {
+        align-items: baseline;
+        margin-bottom: 16px;
+        display: flex;
+        h2 {
+            text-align: left;
+            flex-basis: 80%;
+        }
+        span {
+            text-align: right;
+            color: var(--detective-blue);
+            flex-basis: 20%;
+        }
+    }
+    .avatar {
+        img {
+            border-radius: 50%;
+            width: 75px;
+            border: 2px solid var(--detective-blue);
+        }
+    }
+    .icon-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+    .icon-holder {
+        text-align: center;
+    }
+    .pickup {
+        color: var(--highlight-orange);
+        text-align: center;
+        font-size: 0.8em;
+    }
 }

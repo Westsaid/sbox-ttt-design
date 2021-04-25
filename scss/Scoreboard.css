@@ -43,7 +43,7 @@ body {
           user-select: none;
   background-color: #0009;
   border: 1px solid #000;
-  border-radius: 2px;
+  border-radius: 4px;
   margin: auto;
   color: var(--font-white);
   -webkit-transition: opacity linear 0.05s;

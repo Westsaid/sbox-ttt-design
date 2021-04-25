@@ -2,6 +2,7 @@
 let active
 let scoreboard = document.querySelector(".scoreboard")
 let shop = document.querySelector(".shop")
+let inspect = document.querySelector(".inspect")
 
 let overlayFunctions = {
     scoreboard: (e)  => {
@@ -33,7 +34,17 @@ let overlayFunctions = {
         }
     },
     inspect: (e) => {
-        
+        if (!active) {
+            inspect.className = "inspect fixed open" 
+            active = true
+            let listener = document.addEventListener("keyup", e2 => {
+                if (e2.code == "KeyC") {
+                    inspect.className = "inspect fixed"
+                    document.removeEventListener("keyup",listener)
+                    active = undefined 
+                }
+            })
+        }
     }
 }
 
