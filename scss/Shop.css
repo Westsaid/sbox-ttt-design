@@ -54,8 +54,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -75%);
-          transform: translate(-50%, -75%);
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
   opacity: 0%;
 }
 
@@ -108,7 +108,7 @@ body {
 }
 
 .panel main::-webkit-scrollbar-thumb, .shop main::-webkit-scrollbar-thumb {
-  background: var(--traitor-red);
+  background: #ffae0073;
   opacity: 0;
 }
 

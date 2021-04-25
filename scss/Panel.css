@@ -43,7 +43,7 @@ body {
           user-select: none;
   background-color: #0009;
   border: 1px solid #000;
-  border-radius: 2px;
+  border-radius: 4px;
   margin: auto;
   color: var(--font-white);
   -webkit-transition: opacity linear 0.05s;
@@ -54,8 +54,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -75%);
-          transform: translate(-50%, -75%);
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
   opacity: 0%;
 }
 
@@ -105,11 +105,7 @@ body {
 }
 
 .panel main::-webkit-scrollbar-thumb {
-<<<<<<< HEAD
   background: #ffae0073;
-=======
-  background: var(--traitor-red);
->>>>>>> 1f4fe5ed74686743b2d12786efdeb8c43a30bdd1
   opacity: 0;
 }
 

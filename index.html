@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="scss/Panel.css" />
     <link rel="stylesheet" href="scss/Shop.css" />
     <link rel="stylesheet" href="scss/Scoreboard.css" />
+    <link rel="stylesheet" href="scss/HUD.css" />
     <link rel="stylesheet" href="scss/general.css" />
 
     <style>
@@ -46,6 +47,35 @@
         <h1>s&box TTT - Design</h1>
         <img class="logo" src="images/ttt_logo_red.svg">
     </header>
+    <div class="hud">
+        <div class="left">
+            <div class="main">
+                <div class="bar health"><span>100</span></div>
+                <div class="bar ammo"><span>7/21</span></div>
+                <div class="role"><span>Traitor</span></div>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="top">
+                09:41
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <span>Tom discovered the Body of <span class="t">Randy</span></span>
+                <span>You collected <span class="misc">300$</span> from the body of <span class="t">Randy</span></span>
+                <span>Ron confirmed the deaths of <span class="inno">Dan</span>, <span class="inno">Piper</span> and <span class="dete">Michelle</span></span>
+            </div>
+            <div class="bottom">
+                <div class="weapons">
+                    <div class="weapon t">Knife</div>
+                    <div class="weapon">Rifle</div>
+                    <div class="weapon active">Pistol</div>
+                    <div class="weapon">Melee</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section>
         <h1>Shop</h1>
         <div class="shop fixed">
@@ -178,7 +208,7 @@
     <script src="index.js"></script>
     <style>
         body {
-            background-image: url(images/background1.png);
+            background-image: url(images/background.jpg);
             background-position: bottom center;
             background-repeat: no-repeat;
             background-size: cover;

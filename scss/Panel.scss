@@ -4,7 +4,7 @@
     user-select: none;
     background-color: #0009;
     border: 1px solid #000;
-    border-radius: 2px;
+    border-radius: 4px;
     margin: auto;
     color: var(--font-white);
     transition: opacity linear 0.05s;
@@ -12,7 +12,7 @@
         position:absolute;
         left:50%;
         top:50%;
-        transform: translate(-50%, -75%);
+        transform: translate(-50%, -60%);
         opacity: 0%;
         &.open {
             opacity: 100%;
