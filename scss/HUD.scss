@@ -1,5 +1,8 @@
 @import "Panel";
 
+$margin-x: 30px;
+$margin-y: 40px;
+
 .hud {
     .left {
         .main {
@@ -7,8 +10,8 @@
             height: 140px;
             width: 350px;
             position: absolute;
-            left: 30px;
-            bottom: 40px;
+            left: $margin-x;
+            bottom: $margin-y;
             .bar {
                 margin: 10px;
                 padding: 4px;
@@ -36,6 +39,15 @@
                 vertical-align: middle;
                 border-bottom-left-radius: 4px;
                 border-bottom-right-radius: 4px;
+                img {
+                    height: 35px;
+                    position: absolute;
+                    left: 0;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 9px;
+                    left: 93px;
+                }
                 span {
                     font-size: 24px;
                     font-weight: 500;
@@ -47,7 +59,7 @@
     .middle {
         .bottom {
             position: absolute;
-            bottom: 40px;
+            bottom: $margin-y;
         }
         .top {
             @extend .panel;
@@ -66,7 +78,7 @@
         .top {
             position: absolute;
             top: 40px;
-            right: 30px;
+            right: $margin-x;
             display: flex;
             flex-direction: column;
             & > span {
@@ -93,8 +105,8 @@
         }
         .bottom {
             position: absolute;
-            bottom: 40px;
-            right: 30px;
+            bottom: $margin-y;
+            right: $margin-x;
             .weapons {
                 @extend .panel;
                 counter-reset: item 5;
@@ -102,7 +114,16 @@
                 .weapon {
                     height: 32px;
                     font-size: 22px;
-                    border-bottom: 1px solid #000;
+                    border-bottom: 1px solid #00000083;
+
+                    span {
+                        float: right;
+                        font-size: 0.8em;
+                        vertical-align: sub;
+                        margin-right: 10px;
+                        margin-top: 4px;
+                    }
+
                     &.active {
                         font-weight: 500;
                         background: #0000006b;
@@ -119,7 +140,7 @@
                         width: 32px;
                         height: 32px;
                         text-align: center;
-                        background: #ffae00;
+                        background: var(--highlight-orange);
                         font-weight: 600;
                         counter-increment: item -1;
                     }

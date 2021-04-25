@@ -197,6 +197,16 @@ body {
   border-bottom-right-radius: 4px;
 }
 
+.hud .left .main .role img {
+  height: 35px;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 9px;
+  left: 93px;
+}
+
 .hud .left .main .role span {
   font-size: 24px;
   font-weight: 500;
@@ -273,7 +283,15 @@ body {
 .hud .right .bottom .weapons .weapon {
   height: 32px;
   font-size: 22px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #00000083;
+}
+
+.hud .right .bottom .weapons .weapon span {
+  float: right;
+  font-size: 0.8em;
+  vertical-align: sub;
+  margin-right: 10px;
+  margin-top: 4px;
 }
 
 .hud .right .bottom .weapons .weapon.active {
@@ -292,7 +310,7 @@ body {
   width: 32px;
   height: 32px;
   text-align: center;
-  background: #ffae00;
+  background: var(--highlight-orange);
   font-weight: 600;
   counter-increment: item -1;
 }
