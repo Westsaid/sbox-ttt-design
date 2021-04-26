@@ -9,7 +9,7 @@ body {
   font-family: "Poppins";
 }
 @mixin icon-holder($n, $maxWidth, $itemWidth) {
-  $usedSpace: $itemWidth * $n;
+  $usedSpace: ($itemWidth + 2) * $n;
   $freeSpace: $maxWidth - $usedSpace;
   $marginRight: $freeSpace / ($n);
 
