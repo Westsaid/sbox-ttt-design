@@ -6,18 +6,16 @@ $margin-y: 40px;
 
 .hud {
     .left {
-        width: 350px;
+        $width : 350px;
+        width: $width;
         .effects {
-                @include icon-holder(5, 350px, 50px);
-            
-                // display: flex;
-                position: absolute;
-                bottom: 192px;
-                left: $margin-x;
-                .icon {
-                    background-color: #0000001a;
-                    // margin: auto;
-                }
+            @include icon-holder(5, $width, 50px);
+            position: absolute;
+            bottom: 192px;
+            left: $margin-x;
+            .icon {
+                background-color: #0000001a;
+            }
             // .icon-holder {
             //     flex-basis: 20%;
             //     @include icon(60px);
@@ -42,7 +40,6 @@ $margin-y: 40px;
             //         flex-basis: 20%;
             //     }
             // }
-
         }
         .main {
             @extend .panel;
@@ -188,7 +185,7 @@ $margin-y: 40px;
                         width: 32px;
                         height: 32px;
                         text-align: center;
-                        background:#db8c17;
+                        background: #db8c17;
                         font-weight: 600;
                         counter-increment: item -1;
                     }

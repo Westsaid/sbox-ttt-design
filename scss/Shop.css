@@ -6,7 +6,6 @@ body {
   --font-white: #fafafa;
   --highlight-orange: #ffae00;
   --border-color: #363636;
-  font-family: "Poppins";
 }
 
 .btn {
@@ -166,7 +165,6 @@ body {
   --font-white: #fafafa;
   --highlight-orange: #ffae00;
   --border-color: #363636;
-  font-family: "Poppins";
 }
 
 .btn {
@@ -217,11 +215,40 @@ body {
 }
 
 .shop .item-wrapper {
+  width: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.shop .item-wrapper > * {
+  display: inline-block;
+  width: 50px;
+  margin-right: 18px;
+}
+
+.shop .item-wrapper > *:nth-child(5n) {
+  margin-right: 0;
+}
+
+.shop .item-wrapper .icon {
+  height: 50px;
+  width: 50px;
+  background: #fafafa5e;
+  border-radius: 4px;
+  border: 1px solid #031421;
+  text-align: center;
+  -webkit-transition: all linear 0.05s;
+  transition: all linear 0.05s;
+}
+
+.shop .item-wrapper .icon img {
+  max-width: 80%;
+  margin-top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .shop main {
@@ -250,60 +277,5 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.shop .item {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-  margin-bottom: 25px;
-}
-
-.shop .item .item-holder {
-  width: 100px;
-  -webkit-transition: all linear 0.05s;
-  transition: all linear 0.05s;
-  cursor: pointer;
-}
-
-.shop .item .item-holder.active, .shop .item .item-holder:hover {
-  border-width: 2px;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.shop .item .item-holder.active .icon, .shop .item .item-holder:hover .icon {
-  -webkit-box-shadow: 0px 2px 5px 1px #0000004d;
-          box-shadow: 0px 2px 5px 1px #0000004d;
-  background: #fafafaa1;
-}
-
-.shop .item .item-holder.active {
-  cursor: default;
-}
-
-.shop .item .item-holder .icon {
-  height: 100px;
-  width: 100px;
-  background: #fafafa5e;
-  border-radius: 4px;
-  border: 1px solid #031421;
-  text-align: center;
-  -webkit-transition: all linear 0.05s;
-  transition: all linear 0.05s;
-}
-
-.shop .item .item-holder .icon img {
-  max-width: 80%;
-  margin-top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-.shop .item .price {
-  display: block;
-  text-align: center;
-  margin-top: 5px;
-  font-size: 22px;
-  font-weight: 500;
 }
 /*# sourceMappingURL=Shop.css.map */
