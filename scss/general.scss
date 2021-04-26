@@ -61,6 +61,12 @@ body {
     font-weight: 500;
     border-radius: 2px;
     background-color: var(--traitor-red);
+    opacity: 0.9;
+    transition: all .05s linear;
+    &:active, &:hover {
+      border: 0;
+      opacity: 1;
+    }
 }
 
 .price::before {

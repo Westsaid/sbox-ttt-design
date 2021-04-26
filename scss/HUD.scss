@@ -8,12 +8,31 @@ $margin-y: 40px;
     .left {
         width: 350px;
         .effects {
-            @include icon(50px);
-            .icon {
-                background-color: #0000001a;
+            .icon-holder {
+                flex-basis: 20%;
+                @include icon(60px);
+                .icon {
+                    background-color: #0000001a;
+                    margin: auto;
+                }
+                &:first-child {
+                flex-basis: 50px;
+                    .icon {
+                        float:left
+                    }
+                }
+                &:last-child {
+                flex-basis: 50px;
+
+                    .icon {
+                        float:right
+                    }
+                }
+                &:nth-child(2) {
+                    flex-basis: 20%;
+                }
             }
             width: inherit;
-            justify-content: space-between;
             display: flex;
             position: absolute;
             bottom: 192px;
@@ -41,7 +60,7 @@ $margin-y: 40px;
                     background-color: #3caf07;
                 }
                 &.ammo {
-                    background-color: #eb9d29;
+                    background-color: #db8c17;
                 }
             }
             .indicators {
@@ -163,7 +182,7 @@ $margin-y: 40px;
                         width: 32px;
                         height: 32px;
                         text-align: center;
-                        background: var(--highlight-orange);
+                        background:#db8c17;
                         font-weight: 600;
                         counter-increment: item -1;
                     }

@@ -22,12 +22,17 @@
         width: fit-content;
         text-transform: uppercase;
         background-color: $color;
-        font-size: 0.8em;
-
+        font-size: 0.9em;
+        font-weight: 300;
         .text {
         }
     }
-
+    .scoreboard-holder {
+        width: 100%;
+        overflow: auto;
+        height: 100%;
+        padding-right: 15px;
+    }
     .content {
         box-shadow: #00000040 0px 3px 5px -1px;
         border-width: 2px;
@@ -70,7 +75,6 @@
                 padding-left: 30px;
                 text-align: left;
             }
-
             .enemys {
                 font-size: 2em;
                 color: var(--innocent-green);
@@ -89,7 +93,7 @@
         padding: 0;
         max-height: 500px;
         position: relative;
-
+        font-weight: 300;
         // @include scoreboard-group(#3F7E51, "alive");
         .scoreboard-group {
             &.alive {
@@ -117,14 +121,19 @@
                 text-align: left;
                 padding-left: 5px;
             }
+
+            &:nth-child(1n) {
+                background-color: #2a2a2a66;
+            }
+            &:nth-child(2n) {
+                background-color: #0a0a0a66;
+            }
+    
+            &.traitor { background-color: #df293569;}
+            &.dete {background-color: #2196F369;}
         }
-        
-        .headerline:nth-child(1n) {
-            background-color: #2a2a2a66;
-        }
-        .headerline:nth-child(2n) {
-            background-color: #0a0a0a66;
-        }
+    
+
     }
 
     .headerline {

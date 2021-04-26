@@ -70,28 +70,30 @@ document.querySelectorAll(".shop .item").forEach(item => {
 
 // Scoreboard
 
-let scoreboardContent = document.querySelector(".scoreboard main")
+let scoreboardContent = document.querySelector(".scoreboard main .scoreboard-holder")
 let usernames = ["sonsausage", "realtorgas", "besiegeimmediate", "laborerbiological", "glassesburritos", "golfadolescent", "closetragefilled", "miserableoption", "lepecajole", "tragicgarboard", "consultantsplendid", "salarybellbottoms", "armedthey", "lecternfemale", "topmastbrag", "initiativecommunity", "manongoing", "wrestleglide", "guillemotpursue", "cheapsystem", "welshnotice", "hundredwardroom", "almondsharmful", "quicklyunbreaking", "drunkarddray", "unbalancedamazing", "beingpiston", "creationpigstep", "taboonightgown", "gargantuansubdued", "leavescerebrum", "frostyour", "motionlessbecome", "huttrackball", "columninjury", "cheesesteakgerbil", "fortunepod", "supportwastes", "tippedprincipal", "boltchick", "estimatorscooter", "seagulltime", "birdstock", "bureaucratzap", "referencequack", "greaterneigh", "rabbitsiege", "turnalluring", "confrontcustom", "becausesong", "mildlabored", "postboozer", "restlessjerk", "omniscientchough", "sockbucket", "guffawshell", "garagehoe", "urethralater", "vivaciousemigrate", "mendingmean", "draworange", "frisbeeregretful", "companywashboard", "floataspiring", "freshtea", "streetswarm", "rissolesran", "ashamedsorry", "gatherdirt", "softwarelack", "obsessedinstant", "oleanderastronomer", "councilbetter", "irateburgee", "polentaadventure", "lutediaphragm", "levercloser", "somethingagressive", "kookaburramechanic", "windsurfermuffin", "parcelstaid"]
 let entriesToAdd = 22
 
 let scoreboardGroups = ["alive", "dead", "spectator"]
 let playerCounter = 0
 
-scoreboardGroups.map(e => {
+scoreboardGroups.map((e,i) => {
     let group = createGroup(e)
     let players = getPlayers(2+Math.floor(Math.random()*8))
     if(playerCounter += players.length){
         players.forEach( player => addGroupEntry(group, player))
         group.firstElementChild.innerHTML += " - "+players.length
+        group.querySelector(".content .headerline:first-child").className += i==0 ? " traitor" : i == 1 ? " dete" : ""
         scoreboardContent.appendChild(group)
     }
 })
 document.querySelector(".playerCounter").innerHTML = playerCounter
 
 function getPlayers(amount) {
-    return Array.from(new Array(amount))
-        .map(e => getRandomPlayerData())
-        .sort((a, b) => b.karma - a.karma)
+    let players = Array.from(new Array(amount))
+    .map(e => getRandomPlayerData())
+    .sort((a, b) => b.karma - a.karma)
+    return players
 }
 
 function getRandomPlayerData() {

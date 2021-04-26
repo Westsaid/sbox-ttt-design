@@ -239,6 +239,7 @@ body {
   padding: 0;
   max-height: 500px;
   position: relative;
+  font-weight: 300;
 }
 
 .scoreboard main .scoreboard-group.alive {
@@ -255,7 +256,8 @@ body {
   width: fit-content;
   text-transform: uppercase;
   background-color: #3f7e51;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  font-weight: 300;
 }
 
 .scoreboard main .scoreboard-group.alive div.label:before {
@@ -268,6 +270,13 @@ body {
   content: "\276F";
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.scoreboard main .scoreboard-group.alive .scoreboard-holder {
+  width: 100%;
+  overflow: auto;
+  height: 100%;
+  padding-right: 15px;
 }
 
 .scoreboard main .scoreboard-group.alive .content {
@@ -298,7 +307,8 @@ body {
   width: fit-content;
   text-transform: uppercase;
   background-color: #af262f;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  font-weight: 300;
 }
 
 .scoreboard main .scoreboard-group.dead div.label:before {
@@ -311,6 +321,13 @@ body {
   content: "\276F";
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.scoreboard main .scoreboard-group.dead .scoreboard-holder {
+  width: 100%;
+  overflow: auto;
+  height: 100%;
+  padding-right: 15px;
 }
 
 .scoreboard main .scoreboard-group.dead .content {
@@ -341,7 +358,8 @@ body {
   width: fit-content;
   text-transform: uppercase;
   background-color: #ba8107;
-  font-size: 0.8em;
+  font-size: 0.9em;
+  font-weight: 300;
 }
 
 .scoreboard main .scoreboard-group.spectator div.label:before {
@@ -354,6 +372,13 @@ body {
   content: "\276F";
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.scoreboard main .scoreboard-group.spectator .scoreboard-holder {
+  width: 100%;
+  overflow: auto;
+  height: 100%;
+  padding-right: 15px;
 }
 
 .scoreboard main .scoreboard-group.spectator .content {
@@ -397,6 +422,14 @@ body {
 
 .scoreboard main .headerline:nth-child(2n) {
   background-color: #0a0a0a66;
+}
+
+.scoreboard main .headerline.traitor {
+  background-color: #df293569;
+}
+
+.scoreboard main .headerline.dete {
+  background-color: #2196F369;
 }
 
 .scoreboard .headerline {
