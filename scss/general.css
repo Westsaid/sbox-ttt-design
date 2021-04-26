@@ -1,12 +1,12 @@
 body {
-  --traitor-red: #DF2935;
+  --traitor-red: #df2935;
   --innocent-green: #1bc54e;
-  --detective-blue: #2196F3;
-  --font-black: #2A2A2A;
-  --font-white: #FAFAFA;
-  --highlight-orange: #FFAE00;
+  --detective-blue: #2196f3;
+  --font-black: #2a2a2a;
+  --font-white: #fafafa;
+  --highlight-orange: #ffae00;
   --border-color: #363636;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 .btn {
@@ -23,8 +23,8 @@ body {
   border-radius: 2px;
   background-color: var(--traitor-red);
   opacity: 0.9;
-  -webkit-transition: all .05s linear;
-  transition: all .05s linear;
+  -webkit-transition: all 0.05s linear;
+  transition: all 0.05s linear;
 }
 
 .btn:active, .btn:hover {
@@ -33,7 +33,7 @@ body {
 }
 
 .price::before {
-  content: '$';
+  content: "$";
   margin-right: 0.5rem;
   background: var(--traitor-red);
   border-radius: 50%;

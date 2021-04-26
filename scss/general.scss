@@ -1,16 +1,31 @@
 body {
-    --traitor-red: #DF2935; 
-    --innocent-green: #1bc54e; 
-    --detective-blue: #2196F3; 
-    --font-black: #2A2A2A; 
-    --font-white: #FAFAFA; 
-    --highlight-orange: #FFAE00; 
-    --border-color: #363636;
-    font-family: 'Poppins';
+  --traitor-red: #df2935;
+  --innocent-green: #1bc54e;
+  --detective-blue: #2196f3;
+  --font-black: #2a2a2a;
+  --font-white: #fafafa;
+  --highlight-orange: #ffae00;
+  --border-color: #363636;
+  font-family: "Poppins";
 }
+@mixin icon-holder($n, $maxWidth, $itemWidth) {
+  $usedSpace: $itemWidth * $n;
+  $freeSpace: $maxWidth - $usedSpace;
+  $marginRight: $freeSpace / ($n);
+
+  width: $maxWidth;
+  & > * {
+    display: inline-block;
+    width: $itemWidth;
+    margin-right: $marginRight;
+    &:nth-child(5) {
+      margin-right: 0;
+    }
+  }
+}
+
 @mixin icon($size) {
   .icon {
-
     height: $size;
     width: $size;
     background: #fafafa5e;
@@ -26,57 +41,57 @@ body {
     }
   }
 }
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
-    
-    &::-webkit-scrollbar {
-      width:  6px;
-      height: 6px;
-      opacity: 0;
-      margin-right: 2px;
-      transition: all linear 0.1s;
-    }
-    &::-webkit-scrollbar:hover{
-      background-color: #fffc;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: $foreground-color;
-      opacity: 0;
-    }
-  
-    &::-webkit-scrollbar-track {
-      background: #fffa;
-    }
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    opacity: 0;
+    margin-right: 2px;
+    transition: all linear 0.1s;
+  }
+  &::-webkit-scrollbar:hover {
+    background-color: #fffc;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    opacity: 0;
   }
 
+  &::-webkit-scrollbar-track {
+    background: #fffa;
+  }
+}
+
 .btn {
-    border: none;
-    color: white;
-    padding: 4px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: inherit;
-    font-size: 20px;
-    cursor: pointer;
-    font-weight: 500;
-    border-radius: 2px;
-    background-color: var(--traitor-red);
-    opacity: 0.9;
-    transition: all .05s linear;
-    &:active, &:hover {
-      border: 0;
-      opacity: 1;
-    }
+  border: none;
+  color: white;
+  padding: 4px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 2px;
+  background-color: var(--traitor-red);
+  opacity: 0.9;
+  transition: all 0.05s linear;
+  &:active,
+  &:hover {
+    border: 0;
+    opacity: 1;
+  }
 }
 
 .price::before {
-    content: '$';
-    margin-right: 0.5rem;
-    background: var(--traitor-red);
-    border-radius: 50%;
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    text-align: center;
-    font-size: 0.9em;
+  content: "$";
+  margin-right: 0.5rem;
+  background: var(--traitor-red);
+  border-radius: 50%;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  text-align: center;
+  font-size: 0.9em;
 }

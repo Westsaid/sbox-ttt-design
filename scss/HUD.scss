@@ -8,35 +8,43 @@ $margin-y: 40px;
     .left {
         width: 350px;
         .effects {
-            .icon-holder {
-                flex-basis: 20%;
-                @include icon(60px);
+                @include icon-holder(5, 350px, 50px);
+            
+                // display: flex;
+                position: absolute;
+                bottom: 192px;
+                left: $margin-x;
+
+                @include icon(50px);
                 .icon {
                     background-color: #0000001a;
-                    margin: auto;
+                    // margin: auto;
                 }
-                &:first-child {
-                flex-basis: 50px;
-                    .icon {
-                        float:left
-                    }
-                }
-                &:last-child {
-                flex-basis: 50px;
+            // .icon-holder {
+            //     flex-basis: 20%;
+            //     @include icon(60px);
+            //     .icon {
+            //         background-color: #0000001a;
+            //         margin: auto;
+            //     }
+            //     &:first-child {
+            //     flex-basis: 50px;
+            //         .icon {
+            //             float:left
+            //         }
+            //     }
+            //     &:last-child {
+            //     flex-basis: 50px;
 
-                    .icon {
-                        float:right
-                    }
-                }
-                &:nth-child(2) {
-                    flex-basis: 20%;
-                }
-            }
-            width: inherit;
-            display: flex;
-            position: absolute;
-            bottom: 192px;
-            left: $margin-x;
+            //         .icon {
+            //             float:right
+            //         }
+            //     }
+            //     &:nth-child(2) {
+            //         flex-basis: 20%;
+            //     }
+            // }
+
         }
         .main {
             @extend .panel;
