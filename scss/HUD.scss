@@ -14,8 +14,6 @@ $margin-y: 40px;
                 position: absolute;
                 bottom: 192px;
                 left: $margin-x;
-
-                @include icon(50px);
                 .icon {
                     background-color: #0000001a;
                     // margin: auto;

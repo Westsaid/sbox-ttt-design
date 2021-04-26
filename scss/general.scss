@@ -6,22 +6,6 @@ body {
   --font-white: #fafafa;
   --highlight-orange: #ffae00;
   --border-color: #363636;
-  font-family: "Poppins";
-}
-@mixin icon-holder($n, $maxWidth, $itemWidth) {
-  $usedSpace: ($itemWidth + 2) * $n;
-  $freeSpace: $maxWidth - $usedSpace;
-  $marginRight: $freeSpace / ($n);
-
-  width: $maxWidth;
-  & > * {
-    display: inline-block;
-    width: $itemWidth;
-    margin-right: $marginRight;
-    &:nth-child(5) {
-      margin-right: 0;
-    }
-  }
 }
 
 @mixin icon($size) {
@@ -40,6 +24,22 @@ body {
       transform: translateY(-50%);
     }
   }
+}
+@mixin icon-holder($n, $maxWidth, $itemWidth) {
+  $usedSpace: ($itemWidth + 2) * $n;
+  $freeSpace: $maxWidth - $usedSpace;
+  $marginRight: $freeSpace / ($n);
+
+  width: $maxWidth;
+  & > * {
+    display: inline-block;
+    width: $itemWidth;
+    margin-right: $marginRight;
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+  }
+  @include icon($itemWidth);
 }
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
   &::-webkit-scrollbar {
