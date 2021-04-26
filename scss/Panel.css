@@ -6,7 +6,6 @@ body {
   --font-white: #fafafa;
   --highlight-orange: #ffae00;
   --border-color: #363636;
-  font-family: "Poppins";
 }
 
 .btn {
@@ -113,7 +112,7 @@ body {
 }
 
 .panel main::-webkit-scrollbar-thumb {
-  background: #ffae0073;
+  background: var(--traitor-red);
   opacity: 0;
 }
 

@@ -6,7 +6,6 @@ body {
   --font-white: #fafafa;
   --highlight-orange: #ffae00;
   --border-color: #363636;
-  font-family: "Poppins";
 }
 
 .btn {
@@ -109,19 +108,25 @@ body {
   margin-right: 2px;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
+  border-radius: 8px;
+  background: #fff0;
 }
 
 .panel main::-webkit-scrollbar:hover, .scoreboard main::-webkit-scrollbar:hover {
-  background-color: #fffc;
+  background-color: #fff1;
 }
 
 .panel main::-webkit-scrollbar-thumb, .scoreboard main::-webkit-scrollbar-thumb {
-  background: #ffae0073;
+  background: var(--traitor-red);
   opacity: 0;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .panel main::-webkit-scrollbar-track, .scoreboard main::-webkit-scrollbar-track {
-  background: #fffa;
+  border-radius: 8px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
 }
 
 .panel footer, .scoreboard footer {
@@ -166,7 +171,6 @@ body {
   --font-white: #fafafa;
   --highlight-orange: #ffae00;
   --border-color: #363636;
-  font-family: "Poppins";
 }
 
 .btn {
@@ -441,11 +445,11 @@ body {
 }
 
 .scoreboard main .headerline.traitor {
-  background-color: #df293569;
+  background-color: #df293554;
 }
 
 .scoreboard main .headerline.dete {
-  background-color: #2196F369;
+  background-color: #2196f354;
 }
 
 .scoreboard .headerline {

@@ -19,17 +19,28 @@ body {
     transition: all linear 0.05s;
 
     img {
-      max-width: 80%;
-      margin-top: 50%;
-      transform: translateY(-50%);
+      $width: $size * 0.8 ;
+      $translate : $size / 10;
+      // position: absolute;
+      transform: translateY($translate);
+      width: $width;
+      // // max-width: 80%;
+      // // margin-top: 50%;
+      // transform: translateY(-50%);
     }
   }
 }
 @mixin icon-holder($n, $maxWidth, $itemWidth) {
   $usedSpace: ($itemWidth + 2) * $n;
   $freeSpace: $maxWidth - $usedSpace;
-  $marginRight: $freeSpace / ($n);
+  $marginRight: $freeSpace / ($n - 1);
+  
+  // include icon-holder(5, 350px, 50px);
+  // $usedSpace: (50px + 2) * 5 = 110px;
+  // $freeSpace: 350px - 110px = 240px;
+  // $marginRight: 240px / 4;
 
+  display: table;
   width: $maxWidth;
   & > * {
     display: inline-block;
@@ -48,17 +59,24 @@ body {
     opacity: 0;
     margin-right: 2px;
     transition: all linear 0.1s;
+    border-radius: 8px;                           
+    background: #fff0;
   }
   &::-webkit-scrollbar:hover {
-    background-color: #fffc;
+    background-color: #fff1;
   }
   &::-webkit-scrollbar-thumb {
     background: $foreground-color;
+    // background: $color;
     opacity: 0;
+    cursor: pointer;
+    border-radius: 8px;                           
   }
 
   &::-webkit-scrollbar-track {
-    background: #fffa;
+    // background: #fff4;
+    border-radius: 8px;                           
+    transition: all linear 0.1s;
   }
 }
 

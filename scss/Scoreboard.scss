@@ -105,7 +105,7 @@
             }
             &.spectator {
                 @include scoreboard-group(#ba8107, "Spectator");
-            }
+            }   
         }
         .headerline {
             & > *:nth-child(1) {
@@ -129,11 +129,9 @@
                 background-color: #0a0a0a66;
             }
     
-            &.traitor { background-color: #df293569;}
-            &.dete {background-color: #2196F369;}
+            &.traitor { background-color: #df293554;}
+            &.dete {background-color: #2196f354;}
         }
-    
-
     }
 
     .headerline {

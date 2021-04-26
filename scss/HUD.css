@@ -121,8 +121,10 @@ body {
 }
 
 .panel main::-webkit-scrollbar-thumb, .hud .left .main main::-webkit-scrollbar-thumb, .hud .middle .top main::-webkit-scrollbar-thumb, .hud .right .top > span main::-webkit-scrollbar-thumb, .hud .right .bottom .weapons main::-webkit-scrollbar-thumb {
-  background: #ffae0073;
+  background: var(--traitor-red);
   opacity: 0;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .panel main::-webkit-scrollbar-track, .hud .left .main main::-webkit-scrollbar-track, .hud .middle .top main::-webkit-scrollbar-track, .hud .right .top > span main::-webkit-scrollbar-track, .hud .right .bottom .weapons main::-webkit-scrollbar-track {
@@ -213,6 +215,7 @@ body {
 }
 
 .hud .left .effects {
+  display: table;
   width: 350px;
   position: absolute;
   bottom: 192px;
@@ -222,7 +225,7 @@ body {
 .hud .left .effects > * {
   display: inline-block;
   width: 50px;
-  margin-right: 18px;
+  margin-right: 22.5px;
 }
 
 .hud .left .effects > *:nth-child(5n) {
@@ -241,10 +244,9 @@ body {
 }
 
 .hud .left .effects .icon img {
-  max-width: 80%;
-  margin-top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+  width: 40px;
 }
 
 .hud .left .effects .icon {

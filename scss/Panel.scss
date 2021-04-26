@@ -40,7 +40,7 @@
     }
     main {
         padding: 16px 30px;
-        @include scrollbars(10px,#ffae0073, #fff3);
+        @include scrollbars(10px,var(--traitor-red), #fff9);
         overflow-y: auto;
     }
     footer {
