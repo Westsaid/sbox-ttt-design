@@ -108,19 +108,25 @@ body {
   margin-right: 2px;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
+  border-radius: 8px;
+  background: #fff0;
 }
 
 .panel main::-webkit-scrollbar:hover, .shop main::-webkit-scrollbar:hover {
-  background-color: #fffc;
+  background-color: #fff1;
 }
 
 .panel main::-webkit-scrollbar-thumb, .shop main::-webkit-scrollbar-thumb {
   background: var(--traitor-red);
   opacity: 0;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .panel main::-webkit-scrollbar-track, .shop main::-webkit-scrollbar-track {
-  background: #fffa;
+  border-radius: 8px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
 }
 
 .panel footer, .shop footer {

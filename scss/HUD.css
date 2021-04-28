@@ -114,10 +114,12 @@ body {
   margin-right: 2px;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
+  border-radius: 8px;
+  background: #fff0;
 }
 
 .panel main::-webkit-scrollbar:hover, .hud .left .main main::-webkit-scrollbar:hover, .hud .middle .top main::-webkit-scrollbar:hover, .hud .right .top > span main::-webkit-scrollbar:hover, .hud .right .bottom .weapons main::-webkit-scrollbar:hover {
-  background-color: #fffc;
+  background-color: #fff1;
 }
 
 .panel main::-webkit-scrollbar-thumb, .hud .left .main main::-webkit-scrollbar-thumb, .hud .middle .top main::-webkit-scrollbar-thumb, .hud .right .top > span main::-webkit-scrollbar-thumb, .hud .right .bottom .weapons main::-webkit-scrollbar-thumb {
@@ -128,7 +130,9 @@ body {
 }
 
 .panel main::-webkit-scrollbar-track, .hud .left .main main::-webkit-scrollbar-track, .hud .middle .top main::-webkit-scrollbar-track, .hud .right .top > span main::-webkit-scrollbar-track, .hud .right .bottom .weapons main::-webkit-scrollbar-track {
-  background: #fffa;
+  border-radius: 8px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
 }
 
 .panel footer, .hud .left .main footer, .hud .middle .top footer, .hud .right .top > span footer, .hud .right .bottom .weapons footer {

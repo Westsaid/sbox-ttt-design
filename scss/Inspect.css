@@ -108,19 +108,25 @@ body {
   margin-right: 2px;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
+  border-radius: 8px;
+  background: #fff0;
 }
 
 .panel main::-webkit-scrollbar:hover, .inspect main::-webkit-scrollbar:hover {
-  background-color: #fffc;
+  background-color: #fff1;
 }
 
 .panel main::-webkit-scrollbar-thumb, .inspect main::-webkit-scrollbar-thumb {
-  background: #ffae0073;
+  background: var(--traitor-red);
   opacity: 0;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 .panel main::-webkit-scrollbar-track, .inspect main::-webkit-scrollbar-track {
-  background: #fffa;
+  border-radius: 8px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
 }
 
 .panel footer, .inspect footer {
@@ -175,10 +181,13 @@ body {
 }
 
 .inspect .icon img {
-  max-width: 80%;
-  margin-top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(7.5px);
+          transform: translateY(7.5px);
+  width: 60px;
+}
+
+.inspect.fixed {
+  top: 66%;
 }
 
 .inspect .headline {
