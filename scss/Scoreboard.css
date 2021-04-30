@@ -96,6 +96,11 @@ body {
   border-top-right-radius: inherit;
 }
 
+.panel .header.slim, .scoreboard .header.slim {
+  max-height: 32px;
+  padding: 0;
+}
+
 .panel main, .scoreboard main {
   padding: 16px 30px;
   overflow-y: auto;

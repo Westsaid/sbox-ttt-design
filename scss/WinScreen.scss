@@ -1,0 +1,47 @@
+@import "Panel";
+
+.winscreen {
+    @extend .panel;
+    @extend .panel.xl;
+
+
+    .winscreen-holder {
+        display: flex;
+        overflow: auto;
+        max-height: 400px;
+        .winscreen-cell {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .winscreen-row {
+            display: flex;
+            justify-content: space-evenly;
+            &:nth-child(2) {
+                margin-top: 15px;
+            }
+            .winscreen-obj {
+                display: flex;
+                flex-direction: column;
+                span {
+                    text-align: center;
+                }
+                img {
+                    max-width: 60px;
+                    border: 3px solid;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+    .banner {
+        margin: 0 -1px;
+        border-right: 1px solid #00000033;
+        border-left: 1px solid #00000033;
+        text-align: center;
+        background-color: var(--traitor-red);
+        font-size: 52px;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+}

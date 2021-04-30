@@ -102,6 +102,11 @@ body {
   border-top-right-radius: inherit;
 }
 
+.panel .header.slim, .hud .left .main .header.slim, .hud .middle .top .header.slim, .hud .right .top > span .header.slim, .hud .right .bottom .weapons .header.slim {
+  max-height: 32px;
+  padding: 0;
+}
+
 .panel main, .hud .left .main main, .hud .middle .top main, .hud .right .top > span main, .hud .right .bottom .weapons main {
   padding: 16px 30px;
   overflow-y: auto;

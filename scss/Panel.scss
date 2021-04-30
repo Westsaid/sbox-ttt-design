@@ -7,7 +7,7 @@
     border-radius: 4px;
     margin: auto;
     color: var(--font-white);
-    transition: opacity linear 0.05s;
+    transition: opacity linear 0.05s;  
     &.fixed {
         position:absolute;
         left:50%;
@@ -33,6 +33,10 @@
         font-size: 18px;
     }
     .header {
+        &.slim {
+            max-height: 32px;
+            padding:0;
+        }
         border-bottom: var(--border-color) 1px solid;
         background-color: #0007;
         border-top-left-radius: inherit;

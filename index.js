@@ -3,18 +3,19 @@ let active
 let scoreboard = document.querySelector(".scoreboard")
 let shop = document.querySelector(".shop")
 let inspect = document.querySelector(".inspect")
+let winscreen = document.querySelector(".winscreen")
 
 let overlayFunctions = {
-    scoreboard: (e)  => {
+    scoreboard: (e) => {
         e.preventDefault()
         if (!active) {
-            scoreboard.className = "scoreboard fixed open" 
+            scoreboard.className = "scoreboard fixed open"
             active = true
             let listener = document.addEventListener("keyup", e2 => {
                 if (e2.code == "Tab") {
                     scoreboard.className = "scoreboard fixed"
-                    document.removeEventListener("keyup",listener)
-                    active = undefined 
+                    document.removeEventListener("keyup", listener)
+                    active = undefined
                 }
             })
         }
@@ -22,26 +23,40 @@ let overlayFunctions = {
     shop: (e) => {
         console.log(active)
         if (!active) {
-            shop.className = "shop fixed open" 
+            shop.className = "shop fixed open"
             active = true
             let listener = document.addEventListener("keyup", e2 => {
                 if (e2.code == "KeyB") {
                     shop.className = "shop fixed"
-                    document.removeEventListener("keyup",listener)
-                    active = undefined 
+                    document.removeEventListener("keyup", listener)
+                    active = undefined
                 }
             })
         }
     },
     inspect: (e) => {
         if (!active) {
-            inspect.className = "inspect fixed open" 
+            inspect.className = "inspect fixed open"
             active = true
             let listener = document.addEventListener("keyup", e2 => {
                 if (e2.code == "KeyC") {
                     inspect.className = "inspect fixed"
-                    document.removeEventListener("keyup",listener)
-                    active = undefined 
+                    document.removeEventListener("keyup", listener)
+                    active = undefined
+                }
+            })
+        }
+    },
+    winscreen: (e) => {
+        e.preventDefault()
+        if (!active) {
+            winscreen.className = "winscreen fixed open"
+            active = true
+            let listener = document.addEventListener("keyup", e2 => {
+                if (e2.code == "Escape") {
+                    winscreen.className = "winscreen fixed"
+                    document.removeEventListener("keyup", listener)
+                    active = undefined
                 }
             })
         }
@@ -49,9 +64,10 @@ let overlayFunctions = {
 }
 
 document.addEventListener('keydown', (e) => {
-    if (e.code == "Tab")  overlayFunctions.scoreboard(e)
+    if (e.code == "Tab") overlayFunctions.scoreboard(e)
     else if (e.code == "KeyB") overlayFunctions.shop(e)
     else if (e.code == "KeyC") overlayFunctions.inspect(e)
+    else if (e.code == "Escape") overlayFunctions.winscreen(e)
 });
 
 
@@ -77,22 +93,27 @@ let entriesToAdd = 22
 let scoreboardGroups = ["alive", "dead", "spectator"]
 let playerCounter = 0
 
-scoreboardGroups.map((e,i) => {
+let allPlayers = []
+scoreboardGroups.map((e, i) => {
+    let players = getPlayers(2 + Math.floor(Math.random() * 8))
     let group = createGroup(e)
-    let players = getPlayers(2+Math.floor(Math.random()*8))
-    if(playerCounter += players.length){
-        players.forEach( player => addGroupEntry(group, player))
-        group.firstElementChild.innerHTML += " - "+players.length
-        group.querySelector(".content .headerline:first-child").className += i==0 ? " traitor" : i == 1 ? " dete" : ""
+    if (playerCounter += players.length) {
+        players.forEach(player => {
+            // player.type = e 
+            addGroupEntry(group, player)
+        })
+        group.firstElementChild.innerHTML += " - " + players.length
+        group.querySelector(".content .headerline:first-child").className += i == 0 ? " traitor" : i == 1 ? " dete" : ""
         scoreboardContent.appendChild(group)
+        allPlayers.push(...players)
     }
 })
 document.querySelector(".playerCounter").innerHTML = playerCounter
 
 function getPlayers(amount) {
     let players = Array.from(new Array(amount))
-    .map(e => getRandomPlayerData())
-    .sort((a, b) => b.karma - a.karma)
+        .map(e => getRandomPlayerData())
+        .sort((a, b) => b.karma - a.karma)
     return players
 }
 
@@ -120,7 +141,7 @@ function createGroup(type) {
     content.className = "content"
     group.appendChild(label)
     group.appendChild(content)
-    group.className = "scoreboard-group "+ type
+    group.className = "scoreboard-group " + type
     return group
 }
 function createHeaderline(values) {
@@ -137,4 +158,46 @@ function createHeaderline(values) {
         headerline.appendChild(span)
     })
     return headerline
+}
+
+// Winscreen
+
+function generateWinObj(players, amountWinner) {
+    let getRandomIndex = () => Math.floor((Math.random()) * players.length)
+    let getRandomPlayer = () => players.splice(getRandomIndex(), 1)
+
+    let winners = []
+
+    while (amountWinner-- > 0) winners.push(...getRandomPlayer())
+    let getRandomAmount = () => Math.floor((Math.random()) * (players.length / 4))
+    winners.map(winner => {
+        let rndAmount = getRandomAmount()
+        winner.kills = []
+        while (rndAmount-- > 0) winner.kills = [...winner.kills, ...getRandomPlayer()]
+    })
+
+
+    return winners
+    function generateTree() {
+        let RandomAmount = getRandomAmount()
+
+        i = i || 0
+        // if(i==0) 
+    }
+}
+
+function createTree(args, currentDepth) {
+    currentDepth = currentDepth === undefined ? 0 : currentDepth;
+
+    var node = {
+        ...player,
+        kills: []
+    };
+
+    if (currentDepth < args.depth) {
+        for (var i = 0; i < args.spread; i++) {
+            node.kills.push(createTree(args, currentDepth + 1));
+        }
+    }
+    return node;
 }
