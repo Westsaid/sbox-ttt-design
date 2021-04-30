@@ -168,6 +168,14 @@ body {
   padding: 16px 30px;
 }
 
+.winscreen main {
+  padding: 16px 0;
+}
+
+.winscreen .winscreen-holder > .winscreen-cell > .winscreen-row:first-child img {
+  border-color: var(--traitor-red);
+}
+
 .winscreen .winscreen-holder {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,6 +226,8 @@ body {
   max-width: 60px;
   border: 3px solid;
   border-radius: 6px;
+  border: 2px solid;
+  border-color: var(--innocent-green);
 }
 
 .winscreen .banner {
