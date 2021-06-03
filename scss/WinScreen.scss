@@ -1,14 +1,16 @@
 @import "Panel";
+@import 'general';
 
 .winscreen {
     @extend .panel;
     @extend .panel.xl;
-
+    
+    @include scrollbars(10px,var(--traitor-red), #fff9);
     main {
         padding: 16px 0;
     }
     .winscreen-holder > .winscreen-cell > .winscreen-row:first-child img {
-        border-color: var(--traitor-red);        
+        border-color: var(--traitor-red);
     }
     .winscreen-holder {
         display: flex;
@@ -22,8 +24,19 @@
         .winscreen-row {
             display: flex;
             justify-content: space-evenly;
+            & .winscreen-cell {
+                .winscreen-obj {
+                    -webkit-transform: scale(0.8);
+                }
+                & .winscreen-cell {
+                    .winscreen-obj {
+                        -webkit-transform: scale(0.6);
+                    }
+                }
+            }
+
             &:nth-child(2) {
-                margin-top: 15px;
+                margin-top: 50px;
             }
             .winscreen-obj {
                 display: flex;
@@ -32,11 +45,12 @@
                     text-align: center;
                 }
                 img {
-                    max-width: 60px;
+                    max-width: 75px;
+                    margin: auto;
                     border: 3px solid;
                     border-radius: 6px;
                     border: 2px solid;
-                    border-color: var(--innocent-green);   
+                    border-color: var(--innocent-green);
                 }
             }
         }

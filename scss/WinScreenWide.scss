@@ -1,0 +1,136 @@
+@import "Panel";
+@import 'general';
+
+.winscreen {
+    @extend .panel;
+    @extend .panel.xl;
+    
+    @include scrollbars(10px,var(--traitor-red), #fff9);
+    main {
+        padding: 16px 0;
+    }
+    .winscreen-holder > .winscreen-cell > .winscreen-row:first-child img {
+        border-color: var(--traitor-red);
+    }
+    $chart-object-border: 1px solid black;
+    $chart-object-padding: 10px 20px;
+    
+    $chart-corner-radius: 10px;
+    $chart-line-border: 1px solid green;
+    $chart-line-height: 30px;
+    
+    .flex-tree-container {
+        display:flex;
+        ul {
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+    
+            > li {
+                box-sizing: border-box;
+                flex: 1;
+                padding: 0 5px;
+    
+                // We'll accept any container that's not a `ul` or `li` because that would just be silly
+                > *:not(ul):not(li) {
+                    border: $chart-object-border;
+                    display: inline-block;
+                    margin: 0 auto;
+                    padding: $chart-object-padding;
+                    position: relative;
+    
+                    // We want to add a connector on the bottom of the element unless we've reached the bottom of the tree
+                    // which is signified by :last-child
+                    &:not(:last-child) {
+                        &:after {
+                            border-left: $chart-line-border;
+                            bottom: -1 * $chart-line-height;
+                            content: '';
+                            height: $chart-line-height;
+                            left: 50%;
+                            position: absolute;
+                        }
+                    }
+                }
+    
+                // We've reached the children elements
+                ul {
+                    margin-top: ($chart-line-height * 2) - 1; // Fix 1px spacing between borders, no big deal
+                    position: relative;
+    
+                    li {
+                        position: relative;
+    
+                        // The :before will be the horizontal line on the right side of a child connector and the :after
+                        // will be the left side of the child connector. The child connector is the vertical line going
+                        // down to its children.
+                        &:after,
+                        &:before {
+                            border-top: $chart-line-border;
+                            content: '';
+                            position: absolute;
+                            top: -1 * $chart-line-height;
+                            width: 50%;
+                        }
+    
+                        &:before {
+                            border-left: $chart-line-border;
+                            height: $chart-line-height;
+                            left: 50%;
+                        }
+    
+                        &:after {
+                            right: 50%;
+                        }
+    
+                        // The first and last children won't have to connect to its siblings to the left and right of it,
+                        // so handle that appropriately by hiding 
+                        &:first-child,
+                        &:last-child {
+                            &:before {
+                                border-top: $chart-line-border;
+                                border-top-left-radius: $chart-corner-radius;
+                                top: -1 * $chart-line-height;
+                            }
+    
+                            &:after {
+                                border: none;
+                            }
+                        }
+    
+                        &:last-child {
+                            &:before {
+                                border-left: 0;
+                                border-right: $chart-line-border;
+                                border-top-left-radius: 0;
+                                border-top-right-radius: $chart-corner-radius;
+                                left: 0;
+                                right: 50%;
+                            }
+                        }
+    
+                        // When it's an only child, there won't be a need to connect to its siblings so just remove the
+                        // top border which serves as the horizontal connector
+                        &:only-child {
+                            &:before {
+                                border-top: none;
+                                border-top-right-radius: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .banner {
+        margin: 0 -1px;
+        border-right: 1px solid #00000033;
+        border-left: 1px solid #00000033;
+        text-align: center;
+        background-color: var(--traitor-red);
+        font-size: 52px;
+        font-weight: 600;
+        padding: 10px 0;
+    }
+}
