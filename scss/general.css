@@ -8,6 +8,19 @@ body {
   --border-color: #363636;
 }
 
+.copyright {
+  color: var(--font-white);
+  font-weight: 700;
+  left: 30px;
+  bottom: 10px;
+  position: absolute;
+  text-decoration: none;
+}
+
+.copyright:hover {
+  text-decoration: underline;
+}
+
 .btn {
   border: none;
   color: white;

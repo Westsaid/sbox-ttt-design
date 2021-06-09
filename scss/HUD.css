@@ -8,6 +8,14 @@ body {
   --border-color: #363636;
 }
 
+.copyright {
+  color: var(--font-white);
+  font-weight: 700;
+  left: 5px;
+  bottom: 5px;
+  position: absolute;
+}
+
 .btn {
   border: none;
   color: white;
@@ -182,6 +190,14 @@ body {
   --font-white: #fafafa;
   --highlight-orange: #ffae00;
   --border-color: #363636;
+}
+
+.copyright {
+  color: var(--font-white);
+  font-weight: 700;
+  left: 5px;
+  bottom: 5px;
+  position: absolute;
 }
 
 .btn {
